@@ -8,23 +8,13 @@
   <ng-container matColumnDef="dob">
     <th mat-header-cell *matHeaderCellDef>Datum narození</th>
     <td mat-cell *matCellDef="let member">
-      {{ member.dob }}
+      {{ member.dob | dateOfBirth }}
     </td>
   </ng-container>
   <ng-container matColumnDef="age">
     <th mat-header-cell *matHeaderCellDef>Věk</th>
     <td mat-cell *matCellDef="let member">
       {{ member.dob | age }}
-    </td>
-  </ng-container>
-  <ng-container matColumnDef="role">
-    <th mat-header-cell *matHeaderCellDef>Role</th>
-    <td mat-cell *matCellDef="let member">
-      @for (role of member.lineUpRole; track $index; let isLast = $last) {
-      <span>{{ isLast ? role : role + ", " }}</span>
-      } @empty {
-      <span>nepřiřazena</span>
-      }
     </td>
   </ng-container>
   <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>

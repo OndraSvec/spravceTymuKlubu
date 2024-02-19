@@ -5,11 +5,12 @@ import { ClubService } from '../services/club.service';
 import { Subscription } from 'rxjs';
 import { Member } from './member.type';
 import { AgePipe } from '../pipes/age.pipe';
+import { DateOfBirthPipe } from '../pipes/date-of-birth.pipe';
 
 @Component({
   selector: 'app-members',
   standalone: true,
-  imports: [MatList, MatListItem, MatTableModule, AgePipe],
+  imports: [MatList, MatListItem, MatTableModule, AgePipe, DateOfBirthPipe],
   templateUrl: './members.component.html',
   styleUrl: './members.component.css',
 })
@@ -17,7 +18,7 @@ export class MembersComponent implements OnInit, OnDestroy {
   private clubService: ClubService = inject(ClubService);
   private membersSub!: Subscription;
   public members: Member[] = [];
-  public columnsToDisplay = ['name', 'dob', 'age', 'role'];
+  public columnsToDisplay = ['name', 'dob', 'age'];
 
   ngOnInit(): void {
     this.membersSub = this.clubService.getMembers().subscribe((members) => {

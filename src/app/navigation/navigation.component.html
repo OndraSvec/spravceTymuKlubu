@@ -5,13 +5,32 @@
     fixedInViewport
     [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
     [mode]="(isHandset$ | async) ? 'over' : 'side'"
-    [opened]="(isHandset$ | async) === false"
   >
     <mat-toolbar>Menu</mat-toolbar>
     <mat-nav-list>
-      <a mat-list-item routerLink="/" (click)="drawer.close()">Členové</a>
-      <a mat-list-item routerLink="/teams" (click)="drawer.close()">Týmy</a>
-      <a mat-list-item routerLink="/lineups" (click)="drawer.close()"
+      <a
+        class="toolbar-link"
+        mat-list-item
+        routerLink="/"
+        routerLinkActive="active-link"
+        [routerLinkActiveOptions]="{ exact: true }"
+        (click)="drawer.close()"
+        >Členové</a
+      >
+      <a
+        class="toolbar-link"
+        mat-list-item
+        routerLink="/teams"
+        routerLinkActive="active-link"
+        (click)="drawer.close()"
+        >Týmy</a
+      >
+      <a
+        class="toolbar-link"
+        mat-list-item
+        routerLink="/lineups"
+        routerLinkActive="active-link"
+        (click)="drawer.close()"
         >Soupisky</a
       >
     </mat-nav-list>
@@ -29,6 +48,31 @@
       </button>
       }
       <span>Správce Tymů</span>
+      <span class="flex-spacer"></span>
+      @if (!(isHandset$ | async)) {
+      <a
+        class="toolbar-link"
+        mat-button
+        routerLink="/"
+        routerLinkActive="active-link"
+        [routerLinkActiveOptions]="{ exact: true }"
+        >Členové</a
+      >
+      <a
+        class="toolbar-link"
+        mat-button
+        routerLink="/teams"
+        routerLinkActive="active-link"
+        >Týmy</a
+      >
+      <a
+        class="toolbar-link"
+        mat-button
+        routerLink="/lineups"
+        routerLinkActive="active-link"
+        >Soupisky</a
+      >
+      }
     </mat-toolbar>
     <router-outlet></router-outlet>
   </mat-sidenav-content>

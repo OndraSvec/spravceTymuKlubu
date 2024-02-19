@@ -15,3 +15,15 @@
   top: 0;
   z-index: 1;
 }
+
+.flex-spacer {
+  flex: auto;
+}
+
+.toolbar-link {
+  width: auto;
+}
+
+.toolbar-link.active-link {
+  background-color: rgba(0, 0, 0, 0.12);
+}

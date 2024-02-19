@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable, inject } from '@angular/core';
+import { Member } from '../members/member.type';
 
 @Injectable({
   providedIn: 'root',
@@ -12,6 +13,6 @@ export class ClubService {
   constructor() {}
 
   getMembers() {
-    return this.httpClient.get(this.baseUrl + 'members');
+    return this.httpClient.get<Member[]>(this.baseUrl + 'members');
   }
 }

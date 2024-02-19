@@ -1,0 +1,122 @@
+{
+  "members": [
+    {
+      "id": "1",
+      "firstName": "Marek",
+      "lastName": "Tlučhoř",
+      "age": 28,
+      "teamId": "1",
+      "lineUpId": "1",
+      "lineUpRole": ["hráč", "trenér"],
+      "lineUpPosition": "útočník"
+    },
+    {
+      "id": "2",
+      "firstName": "Jakub",
+      "lastName": "Bezděk",
+      "age": 29,
+      "teamId": "1",
+      "lineUpId": "1",
+      "lineUpRole": ["hráč"],
+      "lineUpPosition": "obránce"
+    },
+    {
+      "id": "3",
+      "firstName": "Jakub",
+      "lastName": "Rohn",
+      "age": 28,
+      "teamId": "1",
+      "lineUpId": "1",
+      "lineUpRole": ["hráč"],
+      "lineUpPosition": "brankář"
+    },
+    {
+      "id": "4",
+      "firstName": "Jaroslav",
+      "lastName": "Kepke",
+      "age": 22,
+      "teamId": "2",
+      "lineUpId": "2",
+      "lineUpRole": ["hráč", "trenér"],
+      "lineUpPosition": "útočník"
+    },
+    {
+      "id": "5",
+      "firstName": "David",
+      "lastName": "Trpký",
+      "age": 19,
+      "teamId": "2",
+      "lineUpId": "2",
+      "lineUpRole": ["hráč"],
+      "lineUpPosition": "obránce"
+    },
+    {
+      "id": "6",
+      "firstName": "Oldřich",
+      "lastName": "Jeřábek",
+      "age": 33,
+      "teamId": "2",
+      "lineUpId": "2",
+      "lineUpRole": ["hráč"],
+      "lineUpPosition": "brankář"
+    },
+    {
+      "id": "7",
+      "firstName": "Patrik",
+      "lastName": "Svozil",
+      "age": 37,
+      "teamId": "3",
+      "lineUpId": "3",
+      "lineUpRole": ["hráč", "trenér"],
+      "lineUpPosition": "útočník"
+    },
+    {
+      "id": "8",
+      "firstName": "Dalibor",
+      "lastName": "Sobotka",
+      "age": 29,
+      "teamId": "3",
+      "lineUpId": "3",
+      "lineUpRole": ["hráč"],
+      "lineUpPosition": "obránce"
+    },
+    {
+      "id": "9",
+      "firstName": "Robert",
+      "lastName": "Mikula",
+      "age": 38,
+      "teamId": "3",
+      "lineUpId": "3",
+      "lineUpRole": ["hráč"],
+      "lineUpPosition": "brankář"
+    }
+  ],
+  "teams": [
+    {
+      "id": "1",
+      "name": "Tým A"
+    },
+    {
+      "id": "2",
+      "name": "Tým B"
+    },
+    {
+      "id": "3",
+      "name": "Tým C"
+    }
+  ],
+  "lineUps": [
+    {
+      "id": "1",
+      "name": "Soupiska A"
+    },
+    {
+      "id": "2",
+      "name": "Soupiska B"
+    },
+    {
+      "id": "3",
+      "name": "Soupiska C"
+    }
+  ]
+}

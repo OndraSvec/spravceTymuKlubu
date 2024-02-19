@@ -9,11 +9,11 @@ export const routes: Routes = [
     component: MembersComponent,
   },
   {
-    path: 'teams',
+    path: 'týmy',
     component: TeamsComponent,
   },
   {
-    path: 'lineups',
+    path: 'soupisky',
     component: LineUpsComponent,
   },
   {

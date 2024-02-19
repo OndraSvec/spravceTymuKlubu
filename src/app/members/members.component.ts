@@ -6,11 +6,21 @@ import { Subscription } from 'rxjs';
 import { Member } from './member.type';
 import { AgePipe } from '../pipes/age.pipe';
 import { DateOfBirthPipe } from '../pipes/date-of-birth.pipe';
+import { LoadingSpinnerComponent } from '../loading-spinner/loading-spinner.component';
+import { AsyncPipe } from '@angular/common';
 
 @Component({
   selector: 'app-members',
   standalone: true,
-  imports: [MatList, MatListItem, MatTableModule, AgePipe, DateOfBirthPipe],
+  imports: [
+    MatList,
+    MatListItem,
+    MatTableModule,
+    AgePipe,
+    AsyncPipe,
+    DateOfBirthPipe,
+    LoadingSpinnerComponent,
+  ],
   templateUrl: './members.component.html',
   styleUrl: './members.component.css',
 })
@@ -19,10 +29,13 @@ export class MembersComponent implements OnInit, OnDestroy {
   private membersSub!: Subscription;
   public members: Member[] = [];
   public columnsToDisplay = ['name', 'dob', 'age'];
+  public loading = false;
 
   ngOnInit(): void {
+    this.loading = true;
     this.membersSub = this.clubService.getMembers().subscribe((members) => {
       this.members = members;
+      this.loading = false;
     });
   }
 

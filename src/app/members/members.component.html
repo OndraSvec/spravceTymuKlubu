@@ -1,3 +1,4 @@
+@defer (when !loading) {
 <table mat-table [dataSource]="members">
   <ng-container matColumnDef="name">
     <th class="responsive-text" mat-header-cell *matHeaderCellDef>Jméno</th>
@@ -22,3 +23,6 @@
   <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
   <tr mat-row *matRowDef="let myRowData; columns: columnsToDisplay"></tr>
 </table>
+} @placeholder (minimum 500ms) {
+<app-loading-spinner></app-loading-spinner>
+}

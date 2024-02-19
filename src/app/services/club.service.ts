@@ -13,6 +13,8 @@ export class ClubService {
   constructor() {}
 
   getMembers() {
-    return this.httpClient.get<Member[]>(this.baseUrl + 'members');
+    return this.httpClient.get<Member[]>(
+      this.baseUrl + 'members?_sort=lastName, firstName'
+    );
   }
 }

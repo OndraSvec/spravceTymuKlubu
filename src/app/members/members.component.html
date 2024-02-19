@@ -1,19 +1,21 @@
 <table mat-table [dataSource]="members">
   <ng-container matColumnDef="name">
-    <th mat-header-cell *matHeaderCellDef>Jméno</th>
-    <td mat-cell *matCellDef="let member">
+    <th class="responsive-text" mat-header-cell *matHeaderCellDef>Jméno</th>
+    <td class="responsive-text" mat-cell *matCellDef="let member">
       {{ member.firstName + " " + member.lastName }}
     </td>
   </ng-container>
   <ng-container matColumnDef="dob">
-    <th mat-header-cell *matHeaderCellDef>Datum narození</th>
-    <td mat-cell *matCellDef="let member">
+    <th class="responsive-text" mat-header-cell *matHeaderCellDef>
+      Datum narození
+    </th>
+    <td class="responsive-text" mat-cell *matCellDef="let member">
       {{ member.dob | dateOfBirth }}
     </td>
   </ng-container>
   <ng-container matColumnDef="age">
-    <th mat-header-cell *matHeaderCellDef>Věk</th>
-    <td mat-cell *matCellDef="let member">
+    <th class="responsive-text" mat-header-cell *matHeaderCellDef>Věk</th>
+    <td class="responsive-text" mat-cell *matCellDef="let member">
       {{ member.dob | age }}
     </td>
   </ng-container>

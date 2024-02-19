@@ -10,3 +10,7 @@ body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
 }
+
+.responsive-text {
+  font-size: clamp(0.8rem, 3vw, 1.25rem);
+}

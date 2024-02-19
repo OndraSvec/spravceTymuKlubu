@@ -22,6 +22,7 @@
 
 .toolbar-link {
   width: auto;
+  font-size: medium;
 }
 
 .toolbar-link.active-link {

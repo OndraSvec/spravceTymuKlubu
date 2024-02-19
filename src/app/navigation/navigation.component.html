@@ -47,7 +47,9 @@
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
       }
-      <span>Správce Tymů</span>
+      <span class="responsive-text">
+        {{ navigationTitle | navigationTitle }}</span
+      >
       <span class="flex-spacer"></span>
       @if (!(isHandset$ | async)) {
       <a

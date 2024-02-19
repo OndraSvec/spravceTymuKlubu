@@ -6,14 +6,17 @@ import { LineUpsComponent } from './line-ups/line-ups.component';
 export const routes: Routes = [
   {
     path: '',
+    title: 'Členové',
     component: MembersComponent,
   },
   {
     path: 'týmy',
+    title: 'Týmy',
     component: TeamsComponent,
   },
   {
     path: 'soupisky',
+    title: 'Soupisky',
     component: LineUpsComponent,
   },
   {

@@ -1,7 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable, inject } from '@angular/core';
 import { Member } from '../members/member.type';
-import { map } from 'rxjs/operators';
 import { Team } from '../teams/team.type';
 
 @Injectable({
@@ -22,5 +21,9 @@ export class ClubService {
 
   getTeams() {
     return this.httpClient.get<Team>(this.baseUrl + 'teams?_sort=name');
+  }
+
+  deleteMember(id: string) {
+    return this.httpClient.delete(this.baseUrl + 'members/' + id).subscribe();
   }
 }

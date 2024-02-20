@@ -52,4 +52,9 @@ export class MembersComponent implements OnInit, OnDestroy {
   ngOnDestroy(): void {
     this.membersSub.unsubscribe();
   }
+
+  onDelete(id: string) {
+    this.clubService.deleteMember(id);
+    this.members = this.members.filter((member) => member.id !== id);
+  }
 }

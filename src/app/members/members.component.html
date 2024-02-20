@@ -30,7 +30,12 @@
       >
         <mat-icon>edit</mat-icon>
       </button>
-      <button [style]="{ transform: 'scale(0.75)' }" mat-mini-fab color="warn">
+      <button
+        [style]="{ transform: 'scale(0.75)' }"
+        mat-mini-fab
+        color="warn"
+        (click)="onDelete(member.id)"
+      >
         <mat-icon>delete</mat-icon>
       </button>
     </td>

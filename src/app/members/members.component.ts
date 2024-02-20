@@ -64,6 +64,19 @@ export class MembersComponent implements OnInit, OnDestroy {
   }
 
   openDialog(member: Member) {
-    this.dialog.open(DialogComponent, { data: { member } });
+    const dialogRef = this.dialog.open(DialogComponent, { data: { member } });
+
+    dialogRef.afterClosed().subscribe((res) => {
+      this.members = this.members.map((member) =>
+        member.id === res.data.id
+          ? {
+              ...member,
+              firstName: res.data.firstName,
+              lastName: res.data.lastName,
+              dob: res.data.dob,
+            }
+          : member
+      );
+    });
   }
 }

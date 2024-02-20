@@ -26,4 +26,20 @@ export class ClubService {
   deleteMember(id: string) {
     return this.httpClient.delete(this.baseUrl + 'members/' + id).subscribe();
   }
+
+  editMember(
+    id: string,
+    formData: { firstName: string; lastName: string; dob: string }
+  ) {
+    return this.httpClient
+      .patch(
+        this.baseUrl + 'members/' + id,
+        JSON.stringify({
+          firstName: formData.firstName,
+          lastName: formData.lastName,
+          dob: formData.dob,
+        })
+      )
+      .subscribe();
+  }
 }

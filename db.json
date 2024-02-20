@@ -53,8 +53,8 @@
     {
       "id": "9",
       "firstName": "Robert",
-      "lastName": "Mikula",
-      "dob": "1992/07/23",
+      "lastName": "Mikulka",
+      "dob": "1992-01-02",
       "teamId": "3",
       "lineUpId": "3",
       "lineUpRole": [

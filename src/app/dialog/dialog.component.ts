@@ -1,4 +1,4 @@
-import { Component, Inject, OnInit } from '@angular/core';
+import { Component, Inject, OnInit, inject } from '@angular/core';
 import { MatButton } from '@angular/material/button';
 import {
   MatDialogActions,
@@ -6,6 +6,7 @@ import {
   MatDialogContent,
   MatDialogTitle,
   MAT_DIALOG_DATA,
+  MatDialogRef,
 } from '@angular/material/dialog';
 import { Member } from '../members/member.type';
 import {
@@ -15,6 +16,7 @@ import {
   Validators,
 } from '@angular/forms';
 import { datePickerFormatter } from '../../utils/helpers';
+import { ClubService } from '../services/club.service';
 
 @Component({
   selector: 'app-dialog',
@@ -31,6 +33,8 @@ import { datePickerFormatter } from '../../utils/helpers';
   styleUrl: './dialog.component.css',
 })
 export class DialogComponent implements OnInit {
+  private clubService: ClubService = inject(ClubService);
+  private dialogRef: MatDialogRef<DialogComponent> = inject(MatDialogRef);
   form!: FormGroup;
 
   constructor(@Inject(MAT_DIALOG_DATA) public data: { member: Member }) {}
@@ -50,6 +54,9 @@ export class DialogComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log(this.form);
+    this.dialogRef.close({
+      data: { id: this.data.member.id, ...this.form.value },
+    });
+    this.clubService.editMember(this.data.member.id, this.form.value);
   }
 }

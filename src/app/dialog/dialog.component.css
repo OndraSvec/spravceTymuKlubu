@@ -1,0 +1,5 @@
+mat-dialog-content {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(0.125rem, 3vw, 0.5rem);
+}

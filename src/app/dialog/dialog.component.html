@@ -6,7 +6,9 @@
     <input type="date" formControlName="dob" />
   </mat-dialog-content>
   <mat-dialog-actions>
-    <button mat-button mat-dialog-close type="submit">OK</button>
+    <button mat-button mat-dialog-close [disabled]="!form.valid" type="submit">
+      OK
+    </button>
     <button mat-button mat-dialog-close>Zrušit</button>
   </mat-dialog-actions>
 </form>

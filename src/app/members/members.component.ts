@@ -27,6 +27,7 @@ import { DialogComponent } from '../dialog/dialog.component';
     DateOfBirthPipe,
     LoadingSpinnerComponent,
     MessageDisplayerComponent,
+    DialogComponent,
     MatMiniFabButton,
     MatIcon,
   ],

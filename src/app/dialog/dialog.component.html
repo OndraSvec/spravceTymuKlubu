@@ -1,8 +1,12 @@
 <h2 mat-dialog-title>Úprava údajů člena</h2>
-<mat-dialog-content>
-  {{ data.member.firstName + " " + data.member.lastName }}
-</mat-dialog-content>
-<mat-dialog-actions>
-  <button mat-button mat-dialog-close>OK</button>
-  <button mat-button mat-dialog-close>Zrušit</button>
-</mat-dialog-actions>
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <mat-dialog-content>
+    <input type="text" formControlName="firstName" />
+    <input type="text" formControlName="lastName" />
+    <input type="date" formControlName="dob" />
+  </mat-dialog-content>
+  <mat-dialog-actions>
+    <button mat-button mat-dialog-close type="submit">OK</button>
+    <button mat-button mat-dialog-close>Zrušit</button>
+  </mat-dialog-actions>
+</form>

@@ -2,13 +2,12 @@ import { Component, OnDestroy, OnInit, inject } from '@angular/core';
 import { MatList, MatListItem } from '@angular/material/list';
 import { MatTableModule } from '@angular/material/table';
 import { ClubService } from '../services/club.service';
-import { Subscription, catchError } from 'rxjs';
+import { Subscription } from 'rxjs';
 import { Member } from './member.type';
 import { AgePipe } from '../pipes/age.pipe';
 import { DateOfBirthPipe } from '../pipes/date-of-birth.pipe';
 import { LoadingSpinnerComponent } from '../loading-spinner/loading-spinner.component';
 import { AsyncPipe } from '@angular/common';
-import { ErrorComponent } from '../error/error.component';
 import { MessageDisplayerComponent } from '../message-displayer/message-displayer.component';
 
 @Component({
@@ -22,7 +21,6 @@ import { MessageDisplayerComponent } from '../message-displayer/message-displaye
     AsyncPipe,
     DateOfBirthPipe,
     LoadingSpinnerComponent,
-    ErrorComponent,
     MessageDisplayerComponent,
   ],
   templateUrl: './members.component.html',

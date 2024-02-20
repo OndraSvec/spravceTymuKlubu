@@ -9,6 +9,8 @@ import { DateOfBirthPipe } from '../pipes/date-of-birth.pipe';
 import { LoadingSpinnerComponent } from '../loading-spinner/loading-spinner.component';
 import { AsyncPipe } from '@angular/common';
 import { MessageDisplayerComponent } from '../message-displayer/message-displayer.component';
+import { MatMiniFabButton } from '@angular/material/button';
+import { MatIcon } from '@angular/material/icon';
 
 @Component({
   selector: 'app-members',
@@ -22,6 +24,8 @@ import { MessageDisplayerComponent } from '../message-displayer/message-displaye
     DateOfBirthPipe,
     LoadingSpinnerComponent,
     MessageDisplayerComponent,
+    MatMiniFabButton,
+    MatIcon,
   ],
   templateUrl: './members.component.html',
   styleUrl: './members.component.css',
@@ -30,7 +34,7 @@ export class MembersComponent implements OnInit, OnDestroy {
   private clubService: ClubService = inject(ClubService);
   private membersSub!: Subscription;
   public members: Member[] = [];
-  public columnsToDisplay = ['name', 'dob', 'age'];
+  public columnsToDisplay = ['name', 'dob', 'age', 'actions'];
   public loading = false;
   public error = false;
 

@@ -20,6 +20,21 @@
       {{ member.dob | age }}
     </td>
   </ng-container>
+  <ng-container matColumnDef="actions">
+    <th class="responsive-text" mat-header-cell *matHeaderCellDef>Akce</th>
+    <td class="responsive-text" mat-cell *matCellDef="let member">
+      <button
+        [style]="{ transform: 'scale(0.75)' }"
+        mat-mini-fab
+        color="primary"
+      >
+        <mat-icon>edit</mat-icon>
+      </button>
+      <button [style]="{ transform: 'scale(0.75)' }" mat-mini-fab color="warn">
+        <mat-icon>delete</mat-icon>
+      </button>
+    </td>
+  </ng-container>
   <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
   <tr mat-row *matRowDef="let myRowData; columns: columnsToDisplay"></tr>
 </table>

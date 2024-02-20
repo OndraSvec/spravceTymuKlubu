@@ -6,6 +6,6 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class DateOfBirthPipe implements PipeTransform {
   transform(dob: string): string {
-    return dob.split('/').reverse().join('.');
+    return dob.split(/[/-.]/).reverse().join('.');
   }
 }

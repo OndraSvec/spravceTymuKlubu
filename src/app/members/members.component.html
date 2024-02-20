@@ -1,4 +1,4 @@
-@if (!error) { @defer (when !loading) {
+@if (!error) { @defer (when !loading) { @if (members.length > 0) {
 <table mat-table [dataSource]="members">
   <ng-container matColumnDef="name">
     <th class="responsive-text" mat-header-cell *matHeaderCellDef>Jméno</th>
@@ -23,8 +23,14 @@
   <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
   <tr mat-row *matRowDef="let myRowData; columns: columnsToDisplay"></tr>
 </table>
-} @placeholder (minimum 500ms) {
+} @else {
+<app-message-displayer
+  message="Zatím nemáte žádné členy..."
+></app-message-displayer>
+} } @placeholder (minimum 500ms) {
 <app-loading-spinner></app-loading-spinner>
 } } @else {
-<app-error></app-error>
+<app-message-displayer
+  message="Ups, data se nepodařilo načíst..."
+></app-message-displayer>
 }

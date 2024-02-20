@@ -1,5 +1,110 @@
 {
-  "members": [],
+  "members": [
+    {
+      "id": "1",
+      "firstName": "Marek",
+      "lastName": "Tlučhoř",
+      "dob": "1992/10/21",
+      "teamId": "1",
+      "lineUpId": "1",
+      "lineUpRole": ["hráč", "trenér"],
+      "lineUpPosition": "útočník"
+    },
+    {
+      "id": "2",
+      "firstName": "Jakub",
+      "lastName": "Bezděk",
+      "dob": "1993/01/03",
+      "teamId": "1",
+      "lineUpId": "1",
+      "lineUpRole": ["hráč"],
+      "lineUpPosition": "obránce"
+    },
+    {
+      "id": "3",
+      "firstName": "Jakub",
+      "lastName": "Rohn",
+      "dob": "1994/02/11",
+      "teamId": "1",
+      "lineUpId": "1",
+      "lineUpRole": ["hráč"],
+      "lineUpPosition": "brankář"
+    },
+    {
+      "id": "4",
+      "firstName": "Jaroslav",
+      "lastName": "Kepke",
+      "dob": "1999/11/29",
+      "teamId": "2",
+      "lineUpId": "2",
+      "lineUpRole": ["hráč", "trenér"],
+      "lineUpPosition": "útočník"
+    },
+    {
+      "id": "5",
+      "firstName": "David",
+      "lastName": "Trpký",
+      "dob": "1998/05/27",
+      "teamId": "2",
+      "lineUpId": "2",
+      "lineUpRole": ["hráč"],
+      "lineUpPosition": "obránce"
+    },
+    {
+      "id": "6",
+      "firstName": "Oldřich",
+      "lastName": "Jeřábek",
+      "dob": "1986/12/31",
+      "teamId": "2",
+      "lineUpId": "2",
+      "lineUpRole": ["hráč"],
+      "lineUpPosition": "brankář"
+    },
+    {
+      "id": "7",
+      "firstName": "Patrik",
+      "lastName": "Svozil",
+      "dob": "1998/09/13",
+      "teamId": "3",
+      "lineUpId": "3",
+      "lineUpRole": ["hráč", "trenér"],
+      "lineUpPosition": "útočník"
+    },
+    {
+      "id": "8",
+      "firstName": "Dalibor",
+      "lastName": "Sobotka",
+      "dob": "1991/08/21",
+      "teamId": "3",
+      "lineUpId": "3",
+      "lineUpRole": ["hráč"],
+      "lineUpPosition": "obránce"
+    },
+    {
+      "id": "9",
+      "firstName": "Robert",
+      "lastName": "Mikula",
+      "dob": "1992/07/23",
+      "teamId": "3",
+      "lineUpId": "3",
+      "lineUpRole": ["hráč"],
+      "lineUpPosition": "brankář"
+    }
+  ],
+  "teams": [
+    {
+      "id": "1",
+      "name": "Tým A"
+    },
+    {
+      "id": "2",
+      "name": "Tým B"
+    },
+    {
+      "id": "3",
+      "name": "Tým C"
+    }
+  ],
   "lineUps": [
     {
       "id": "1",

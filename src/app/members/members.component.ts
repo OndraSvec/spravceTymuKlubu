@@ -9,6 +9,7 @@ import { DateOfBirthPipe } from '../pipes/date-of-birth.pipe';
 import { LoadingSpinnerComponent } from '../loading-spinner/loading-spinner.component';
 import { AsyncPipe } from '@angular/common';
 import { ErrorComponent } from '../error/error.component';
+import { MessageDisplayerComponent } from '../message-displayer/message-displayer.component';
 
 @Component({
   selector: 'app-members',
@@ -22,6 +23,7 @@ import { ErrorComponent } from '../error/error.component';
     DateOfBirthPipe,
     LoadingSpinnerComponent,
     ErrorComponent,
+    MessageDisplayerComponent,
   ],
   templateUrl: './members.component.html',
   styleUrl: './members.component.css',

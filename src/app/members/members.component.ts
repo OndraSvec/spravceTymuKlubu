@@ -1,6 +1,7 @@
 import { Component, OnDestroy, OnInit, inject } from '@angular/core';
 import { MatList, MatListItem } from '@angular/material/list';
 import { MatTableModule } from '@angular/material/table';
+import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { ClubService } from '../services/club.service';
 import { Subscription } from 'rxjs';
 import { Member } from './member.type';
@@ -11,6 +12,7 @@ import { AsyncPipe } from '@angular/common';
 import { MessageDisplayerComponent } from '../message-displayer/message-displayer.component';
 import { MatMiniFabButton } from '@angular/material/button';
 import { MatIcon } from '@angular/material/icon';
+import { DialogComponent } from '../dialog/dialog.component';
 
 @Component({
   selector: 'app-members',
@@ -18,6 +20,7 @@ import { MatIcon } from '@angular/material/icon';
   imports: [
     MatList,
     MatListItem,
+    MatDialogModule,
     MatTableModule,
     AgePipe,
     AsyncPipe,
@@ -32,6 +35,7 @@ import { MatIcon } from '@angular/material/icon';
 })
 export class MembersComponent implements OnInit, OnDestroy {
   private clubService: ClubService = inject(ClubService);
+  private dialog: MatDialog = inject(MatDialog);
   private membersSub!: Subscription;
   public members: Member[] = [];
   public columnsToDisplay = ['name', 'dob', 'age', 'actions'];
@@ -56,5 +60,9 @@ export class MembersComponent implements OnInit, OnDestroy {
   onDelete(id: string) {
     this.clubService.deleteMember(id);
     this.members = this.members.filter((member) => member.id !== id);
+  }
+
+  openDialog(member: Member) {
+    this.dialog.open(DialogComponent, { data: { member } });
   }
 }

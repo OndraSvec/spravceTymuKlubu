@@ -1,1 +1,13 @@
-<p>teams works!</p>
+@if (!error) { @defer (when !loading) { @for (team of teams; track team.id) {
+<app-team [team]="team" [members]="members"></app-team>
+} @empty {
+<app-message-displayer
+  message="Zatím nemáte žádné členy..."
+></app-message-displayer>
+} } @placeholder (minimum 500ms) {
+<app-loading-spinner></app-loading-spinner>
+} } @else {
+<app-message-displayer
+  message="Ups, data se nepodařilo načíst..."
+></app-message-displayer>
+}

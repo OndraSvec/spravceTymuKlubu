@@ -1,0 +1,13 @@
+<mat-expansion-panel [disabled]="!teamMembers.length">
+  <mat-expansion-panel-header [expandedHeight]="'auto'">
+    <mat-panel-title class="responsive-text">
+      {{ team.name }}
+    </mat-panel-title>
+    <mat-panel-description>
+      {{ teamMembers.length | outputTeamMembersCount : team.name }}
+    </mat-panel-description>
+  </mat-expansion-panel-header>
+  @for (member of teamMembers; track member.id) {
+  <p>{{ member.firstName + " " + member.lastName }}</p>
+  }
+</mat-expansion-panel>

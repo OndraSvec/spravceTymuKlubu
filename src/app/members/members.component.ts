@@ -99,7 +99,7 @@ export class MembersComponent implements OnInit, OnDestroy {
             lineUpPosition: '',
             lineUpRole: [],
           });
-          // to trigger the OnChanges mechanism
+          // Use concat to trigger the OnChanges mechanism
           this.members = ([] as Member[]).concat(sortMembers(this.members));
         }
       }

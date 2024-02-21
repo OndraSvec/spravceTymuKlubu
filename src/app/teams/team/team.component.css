@@ -1,0 +1,8 @@
+mat-expansion-panel-header {
+  height: fit-content;
+  padding: clamp(0.5rem, 3vw, 1rem);
+}
+
+mat-panel-title {
+  line-height: normal;
+}

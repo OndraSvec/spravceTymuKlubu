@@ -27,7 +27,7 @@ export class ClubService {
   }
 
   getTeams() {
-    return this.httpClient.get<Team>(this.baseUrl + 'teams?_sort=name');
+    return this.httpClient.get<Team[]>(this.baseUrl + 'teams?_sort=name');
   }
 
   deleteMember(id: string) {

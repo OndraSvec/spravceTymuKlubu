@@ -5,7 +5,147 @@
       "firstName": "Jaroslav",
       "lastName": "Peterka",
       "dob": "1992-11-14",
-      "teamId": "",
+      "teamId": "1",
+      "lineUpId": "",
+      "lineUpPosition": "",
+      "lineUpRole": []
+    },
+    {
+      "id": "L5ysD9ZyLP83ZHUTbpLEs",
+      "firstName": "David",
+      "lastName": "Křepelka",
+      "dob": "1992-04-16",
+      "teamId": "1",
+      "lineUpId": "",
+      "lineUpPosition": "",
+      "lineUpRole": []
+    },
+    {
+      "id": "RRgls5s6RpU5T7DzkHuXF",
+      "firstName": "Tomáš",
+      "lastName": "Křepelka",
+      "dob": "1995-08-23",
+      "teamId": "1",
+      "lineUpId": "",
+      "lineUpPosition": "",
+      "lineUpRole": []
+    },
+    {
+      "id": "UJOBtpIPPWaskA0Arbghv",
+      "firstName": "Adam",
+      "lastName": "Petr",
+      "dob": "1998-07-17",
+      "teamId": "1",
+      "lineUpId": "",
+      "lineUpPosition": "",
+      "lineUpRole": []
+    },
+    {
+      "id": "mPPcUa3TedYSp7cgQr9CO",
+      "firstName": "Petr",
+      "lastName": "Stolbenko",
+      "dob": "1993-11-19",
+      "teamId": "1",
+      "lineUpId": "",
+      "lineUpPosition": "",
+      "lineUpRole": []
+    },
+    {
+      "id": "0TKKm9RpO2nQdWzigLWrC",
+      "firstName": "Kamil",
+      "lastName": "Pačeska",
+      "dob": "1998-06-08",
+      "teamId": "2",
+      "lineUpId": "",
+      "lineUpPosition": "",
+      "lineUpRole": []
+    },
+    {
+      "id": "mLBUEP0z4LDvKRcccbtbz",
+      "firstName": "Lukáš",
+      "lastName": "Potůček",
+      "dob": "1962-08-01",
+      "teamId": "2",
+      "lineUpId": "",
+      "lineUpPosition": "",
+      "lineUpRole": []
+    },
+    {
+      "id": "qsWUjW4JoVJp0WO7LDE1B",
+      "firstName": "Jiří",
+      "lastName": "Pamlska",
+      "dob": "2000-12-29",
+      "teamId": "3",
+      "lineUpId": "",
+      "lineUpPosition": "",
+      "lineUpRole": []
+    },
+    {
+      "id": "_gx8lATzinfZdb_oF-KGL",
+      "firstName": "Dalibor",
+      "lastName": "Janáček",
+      "dob": "1998-01-19",
+      "teamId": "3",
+      "lineUpId": "",
+      "lineUpPosition": "",
+      "lineUpRole": []
+    },
+    {
+      "id": "zIY9b3hWKScDZBwRCD0Ve",
+      "firstName": "Radek",
+      "lastName": "Ctiboř",
+      "dob": "1997-07-17",
+      "teamId": "3",
+      "lineUpId": "",
+      "lineUpPosition": "",
+      "lineUpRole": []
+    },
+    {
+      "id": "rf_bIfUoZEvyNLnJpHFDe",
+      "firstName": "Ctirad",
+      "lastName": "Milorád",
+      "dob": "1974-11-30",
+      "teamId": "3",
+      "lineUpId": "",
+      "lineUpPosition": "",
+      "lineUpRole": []
+    },
+    {
+      "id": "UQBd0LaIqMjml6Wgpnycp",
+      "firstName": "Jakub",
+      "lastName": "Třepišovský",
+      "dob": "2001-09-19",
+      "teamId": "3",
+      "lineUpId": "",
+      "lineUpPosition": "",
+      "lineUpRole": []
+    },
+    {
+      "id": "MGokjIXrGBespkxzvkU3o",
+      "firstName": "Tomáš",
+      "lastName": "Toušeň",
+      "dob": "1986-10-02",
+      "teamId": "3",
+      "lineUpId": "",
+      "lineUpPosition": "",
+      "lineUpRole": []
+    },
+    {
+      "id": "cBiqkYqRdxAX1-khAHI43",
+      "firstName": "Stanislav",
+      "lastName": "Roubek",
+      "dob": "1981-08-04",
+      "teamId": "3",
+      "lineUpId": "",
+      "lineUpPosition": "",
+      "lineUpRole": []
+    },
+    {
+      "id": "VBmczq3qcShwz1GMPFJDu",
+      "firstName": "Rastislav",
+      "lastName": "Válka",
+      "dob": "1992-03-05",
+      "teamId": "3",
       "lineUpId": "",
       "lineUpPosition": "",
       "lineUpRole": []

@@ -4,6 +4,12 @@ import { Member } from '../members/member.type';
 import { Team } from '../teams/team.type';
 import { datePickerFormatter } from '../../utils/helpers';
 
+type MemberFormData = {
+  firstName: string;
+  lastName: string;
+  dob: Date;
+};
+
 @Injectable({
   providedIn: 'root',
 })
@@ -28,10 +34,7 @@ export class ClubService {
     return this.httpClient.delete(this.baseUrl + 'members/' + id).subscribe();
   }
 
-  editMember(
-    id: string,
-    formData: { firstName: string; lastName: string; dob: Date }
-  ) {
+  editMember(id: string, formData: MemberFormData) {
     return this.httpClient
       .patch(
         this.baseUrl + 'members/' + id,
@@ -42,5 +45,16 @@ export class ClubService {
         })
       )
       .subscribe();
+  }
+
+  addMember(formData: MemberFormData) {
+    return this.httpClient.post(
+      this.baseUrl + 'members/',
+      JSON.stringify({
+        firstName: formData.firstName,
+        lastName: formData.lastName,
+        dob: datePickerFormatter(formData.dob),
+      })
+    );
   }
 }

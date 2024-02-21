@@ -1,7 +1,11 @@
 import { Component, OnDestroy, OnInit, inject } from '@angular/core';
 import { MatList, MatListItem } from '@angular/material/list';
 import { MatTableModule } from '@angular/material/table';
-import { MatDialog, MatDialogModule } from '@angular/material/dialog';
+import {
+  MatDialog,
+  MatDialogModule,
+  MatDialogRef,
+} from '@angular/material/dialog';
 import { ClubService } from '../services/club.service';
 import { Subscription } from 'rxjs';
 import { Member } from './member.type';
@@ -14,7 +18,7 @@ import { MatMiniFabButton } from '@angular/material/button';
 import { MatIcon } from '@angular/material/icon';
 import { DialogComponent } from '../components/dialog/dialog.component';
 import { AddDBEntryButtonComponent } from '../components/add-dbentry-button/add-dbentry-button.component';
-import { datePickerFormatter } from '../../utils/helpers';
+import { datePickerFormatter, sortMembers } from '../../utils/helpers';
 
 @Component({
   selector: 'app-members',
@@ -39,8 +43,9 @@ import { datePickerFormatter } from '../../utils/helpers';
 })
 export class MembersComponent implements OnInit, OnDestroy {
   private clubService: ClubService = inject(ClubService);
-  private dialog: MatDialog = inject(MatDialog);
   private membersSub!: Subscription;
+  protected dialog: MatDialog = inject(MatDialog);
+  protected dialogRef!: MatDialogRef<DialogComponent, any>;
   public members: Member[] = [];
   public columnsToDisplay = ['name', 'dob', 'age', 'actions'];
   public loading = false;
@@ -66,22 +71,38 @@ export class MembersComponent implements OnInit, OnDestroy {
     this.members = this.members.filter((member) => member.id !== id);
   }
 
-  openDialog(member: Member) {
-    const dialogRef = this.dialog.open(DialogComponent, { data: { member } });
+  // Use an arrow function so as not to lose 'this'
+  openDialog = (member: Member, editMode: boolean) => {
+    const dialogRef = this.dialog.open(DialogComponent, {
+      data: { member, editMode },
+    });
 
     dialogRef.afterClosed().subscribe((res) => {
       if (res) {
-        this.members = this.members.map((member) =>
-          member.id === res.data.id
-            ? {
-                ...member,
-                firstName: res.data.firstName,
-                lastName: res.data.lastName,
-                dob: datePickerFormatter(res.data.dob),
-              }
-            : member
-        );
+        if (res.editMode) {
+          this.members = this.members.map((member) =>
+            member.id === res.data.id
+              ? {
+                  ...member,
+                  firstName: res.data.firstName,
+                  lastName: res.data.lastName,
+                  dob: datePickerFormatter(res.data.dob),
+                }
+              : member
+          );
+        } else {
+          this.members.push({
+            ...res.data,
+            dob: datePickerFormatter(res.data.dob),
+            teamId: '',
+            lineUpId: '',
+            lineUpPosition: '',
+            lineUpRole: [],
+          });
+          // to trigger the OnChanges mechanism
+          this.members = ([] as Member[]).concat(sortMembers(this.members));
+        }
       }
     });
-  }
+  };
 }

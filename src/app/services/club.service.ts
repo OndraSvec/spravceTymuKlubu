@@ -47,14 +47,19 @@ export class ClubService {
       .subscribe();
   }
 
-  addMember(formData: MemberFormData) {
+  addMember(id: string, formData: MemberFormData) {
     return this.httpClient
       .post(
         this.baseUrl + 'members/',
         JSON.stringify({
+          id,
           firstName: formData.firstName,
           lastName: formData.lastName,
           dob: datePickerFormatter(formData.dob),
+          teamId: '',
+          lineUpId: '',
+          lineUpPosition: '',
+          lineUpRole: [],
         })
       )
       .subscribe();

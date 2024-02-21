@@ -12,4 +12,5 @@
 
 .button-container > button {
   pointer-events: all;
+  margin: clamp(0.5rem, 3vw, 1rem);
 }

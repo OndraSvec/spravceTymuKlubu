@@ -20,6 +20,7 @@ import { ClubService } from '../../services/club.service';
 import { MatFormField, MatHint, MatLabel } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatDatepickerModule } from '@angular/material/datepicker';
+import { nanoid } from 'nanoid';
 
 @Component({
   selector: 'app-dialog',
@@ -45,30 +46,39 @@ export class DialogComponent implements OnInit {
   private dialogRef: MatDialogRef<DialogComponent> = inject(MatDialogRef);
   form!: FormGroup;
 
-  constructor(@Inject(MAT_DIALOG_DATA) public data: { member: Member }) {}
+  constructor(
+    @Inject(MAT_DIALOG_DATA) public data: { member: Member; editMode: boolean }
+  ) {}
 
   ngOnInit(): void {
+    const { member, editMode } = this.data;
+
     this.form = new FormGroup({
-      firstName: new FormControl(this.data.member.firstName || '', [
+      firstName: new FormControl(editMode ? member.firstName : '', [
         Validators.required,
       ]),
-      lastName: new FormControl(this.data.member.lastName || '', [
+      lastName: new FormControl(editMode ? member.lastName : '', [
         Validators.required,
       ]),
-      dob: new FormControl(datePickerFormatter(this.data.member.dob) || '', [
+      dob: new FormControl(editMode ? datePickerFormatter(member.dob) : '', [
         Validators.required,
       ]),
     });
   }
 
   onSubmit() {
+    const { editMode } = this.data;
+    const newId = nanoid();
+
     this.dialogRef.close({
+      editMode,
       data: {
-        id: this.data.member.id,
-        dob: this.form.value.dob,
+        id: editMode ? this.data.member.id : newId,
         ...this.form.value,
       },
     });
-    this.clubService.editMember(this.data.member.id, this.form.value);
+    return this.data.editMode
+      ? this.clubService.editMember(this.data.member.id, this.form.value)
+      : this.clubService.addMember(newId, this.form.value);
   }
 }

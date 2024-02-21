@@ -1,54 +1,14 @@
 {
   "members": [
     {
-      "id": "1",
-      "firstName": "Marek",
-      "lastName": "Tlučhoř",
-      "dob": "1992-10-21",
-      "teamId": "1",
-      "lineUpId": "1",
-      "lineUpRole": [
-        "hráč",
-        "trenér"
-      ],
-      "lineUpPosition": "útočník"
-    },
-    {
-      "id": "5",
-      "firstName": "David",
-      "lastName": "Trpký",
-      "dob": "1997-11-29",
-      "teamId": "2",
-      "lineUpId": "2",
-      "lineUpRole": [
-        "hráč"
-      ],
-      "lineUpPosition": "obránce"
-    },
-    {
-      "id": "7",
-      "firstName": "Patrik",
-      "lastName": "Svozil",
-      "dob": "1998-09-17",
-      "teamId": "3",
-      "lineUpId": "3",
-      "lineUpRole": [
-        "hráč",
-        "trenér"
-      ],
-      "lineUpPosition": "útočník"
-    },
-    {
-      "id": "8",
-      "firstName": "Dalibor",
-      "lastName": "Sobotka",
-      "dob": "1991-08-21",
-      "teamId": "3",
-      "lineUpId": "3",
-      "lineUpRole": [
-        "hráč"
-      ],
-      "lineUpPosition": "obránce"
+      "id": "O5IxfPZZs37mSQYP0uzwM",
+      "firstName": "Jaroslav",
+      "lastName": "Peterka",
+      "dob": "1992-11-14",
+      "teamId": "",
+      "lineUpId": "",
+      "lineUpPosition": "",
+      "lineUpRole": []
     }
   ],
   "teams": [

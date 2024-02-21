@@ -1,5 +1,10 @@
 <div class="button-container">
-  <button mat-fab extended color="primary" style="margin: 0.5rem">
+  <button
+    mat-fab
+    extended
+    color="primary"
+    (click)="openDialog(dummyMember, false)"
+  >
     <mat-icon>add</mat-icon>
     Přidat člena
   </button>

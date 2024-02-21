@@ -1,4 +1,6 @@
-<h2 mat-dialog-title>Úprava údajů člena</h2>
+<h2 mat-dialog-title>
+  {{ data.editMode ? "Úprava údajů člena" : "Nový člen" }}
+</h2>
 <form [formGroup]="form" (ngSubmit)="onSubmit()">
   <mat-dialog-content>
     <mat-form-field appearance="fill">

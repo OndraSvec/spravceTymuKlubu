@@ -7,12 +7,13 @@ import { Subscription } from 'rxjs';
 import { Member } from './member.type';
 import { AgePipe } from '../pipes/age.pipe';
 import { DateOfBirthPipe } from '../pipes/date-of-birth.pipe';
-import { LoadingSpinnerComponent } from '../loading-spinner/loading-spinner.component';
+import { LoadingSpinnerComponent } from '../components/loading-spinner/loading-spinner.component';
 import { AsyncPipe } from '@angular/common';
-import { MessageDisplayerComponent } from '../message-displayer/message-displayer.component';
+import { MessageDisplayerComponent } from '../components/message-displayer/message-displayer.component';
 import { MatMiniFabButton } from '@angular/material/button';
 import { MatIcon } from '@angular/material/icon';
-import { DialogComponent } from '../dialog/dialog.component';
+import { DialogComponent } from '../components/dialog/dialog.component';
+import { AddDBEntryButtonComponent } from '../components/add-dbentry-button/add-dbentry-button.component';
 
 @Component({
   selector: 'app-members',
@@ -25,6 +26,7 @@ import { DialogComponent } from '../dialog/dialog.component';
     AgePipe,
     AsyncPipe,
     DateOfBirthPipe,
+    AddDBEntryButtonComponent,
     LoadingSpinnerComponent,
     MessageDisplayerComponent,
     DialogComponent,

@@ -8,15 +8,15 @@ import {
   MAT_DIALOG_DATA,
   MatDialogRef,
 } from '@angular/material/dialog';
-import { Member } from '../members/member.type';
+import { Member } from '../../members/member.type';
 import {
   FormControl,
   FormGroup,
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
-import { datePickerFormatter } from '../../utils/helpers';
-import { ClubService } from '../services/club.service';
+import { datePickerFormatter } from '../../../utils/helpers';
+import { ClubService } from '../../services/club.service';
 
 @Component({
   selector: 'app-dialog',

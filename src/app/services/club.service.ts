@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable, inject } from '@angular/core';
 import { Member } from '../members/member.type';
 import { Team } from '../teams/team.type';
+import { datePickerFormatter } from '../../utils/helpers';
 
 @Injectable({
   providedIn: 'root',
@@ -29,7 +30,7 @@ export class ClubService {
 
   editMember(
     id: string,
-    formData: { firstName: string; lastName: string; dob: string }
+    formData: { firstName: string; lastName: string; dob: Date }
   ) {
     return this.httpClient
       .patch(
@@ -37,7 +38,7 @@ export class ClubService {
         JSON.stringify({
           firstName: formData.firstName,
           lastName: formData.lastName,
-          dob: formData.dob,
+          dob: datePickerFormatter(formData.dob),
         })
       )
       .subscribe();

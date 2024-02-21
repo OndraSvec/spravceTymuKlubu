@@ -17,16 +17,24 @@ import {
 } from '@angular/forms';
 import { datePickerFormatter } from '../../../utils/helpers';
 import { ClubService } from '../../services/club.service';
+import { MatFormField, MatHint, MatLabel } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatDatepickerModule } from '@angular/material/datepicker';
 
 @Component({
   selector: 'app-dialog',
   standalone: true,
   imports: [
     MatButton,
+    MatDatepickerModule,
     MatDialogActions,
     MatDialogContent,
     MatDialogClose,
     MatDialogTitle,
+    MatFormField,
+    MatInputModule,
+    MatLabel,
+    MatHint,
     ReactiveFormsModule,
   ],
   templateUrl: './dialog.component.html',
@@ -55,7 +63,11 @@ export class DialogComponent implements OnInit {
 
   onSubmit() {
     this.dialogRef.close({
-      data: { id: this.data.member.id, ...this.form.value },
+      data: {
+        id: this.data.member.id,
+        dob: this.form.value.dob,
+        ...this.form.value,
+      },
     });
     this.clubService.editMember(this.data.member.id, this.form.value);
   }

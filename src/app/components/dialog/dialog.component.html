@@ -1,9 +1,31 @@
 <h2 mat-dialog-title>Úprava údajů člena</h2>
 <form [formGroup]="form" (ngSubmit)="onSubmit()">
   <mat-dialog-content>
-    <input type="text" formControlName="firstName" />
-    <input type="text" formControlName="lastName" />
-    <input type="date" formControlName="dob" />
+    <mat-form-field appearance="fill">
+      <mat-label>Křestní jméno</mat-label>
+      <input matInput formControlName="firstName" placeholder="Křestní jméno" />
+      <mat-hint>Toto pole je povinné</mat-hint>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Příjmení</mat-label>
+      <input matInput formControlName="lastName" placeholder="Příjmení" />
+      <mat-hint>Toto pole je povinné</mat-hint>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Datum narození</mat-label>
+      <input
+        matInput
+        [matDatepicker]="picker"
+        formControlName="dob"
+        placeholder="MM/DD/YYYY"
+      />
+      <mat-hint>Toto pole je povinné</mat-hint>
+      <mat-datepicker-toggle
+        matIconSuffix
+        [for]="picker"
+      ></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
   </mat-dialog-content>
   <mat-dialog-actions>
     <button mat-button mat-dialog-close [disabled]="!form.valid" type="submit">

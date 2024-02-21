@@ -14,6 +14,7 @@ import { MatMiniFabButton } from '@angular/material/button';
 import { MatIcon } from '@angular/material/icon';
 import { DialogComponent } from '../components/dialog/dialog.component';
 import { AddDBEntryButtonComponent } from '../components/add-dbentry-button/add-dbentry-button.component';
+import { datePickerFormatter } from '../../utils/helpers';
 
 @Component({
   selector: 'app-members',
@@ -76,7 +77,7 @@ export class MembersComponent implements OnInit, OnDestroy {
                 ...member,
                 firstName: res.data.firstName,
                 lastName: res.data.lastName,
-                dob: res.data.dob,
+                dob: datePickerFormatter(res.data.dob),
               }
             : member
         );

@@ -6,6 +6,8 @@ import { OutputTeamMembersCountPipe } from '../../pipes/output-team-members-coun
 import { MatList, MatListItem } from '@angular/material/list';
 import { MatDivider } from '@angular/material/divider';
 import { MatButton } from '@angular/material/button';
+import { ExpansionPanelComponent } from '../../components/expansion-panel/expansion-panel.component';
+import { outputTeamMembersCount } from '../../../utils/helpers';
 
 @Component({
   selector: 'app-team',
@@ -17,6 +19,7 @@ import { MatButton } from '@angular/material/button';
     MatList,
     MatListItem,
     OutputTeamMembersCountPipe,
+    ExpansionPanelComponent,
   ],
   templateUrl: './team.component.html',
   styleUrl: './team.component.css',
@@ -35,18 +38,25 @@ export class TeamComponent implements OnInit {
   openDialog!: (editMode: boolean, team: Team) => void;
 
   public teamMembers: Member[] = [];
+  public description!: string;
 
   ngOnInit(): void {
     this.teamMembers = this.members.filter(
       (member) => member.teamId === this.team.id
     );
+    this.description = outputTeamMembersCount(
+      this.teamMembers.length,
+      this.team.name
+    );
   }
 
-  deleteTeam() {
+  // Arrow function so as not to lose the context of 'this'
+  deleteTeam = () => {
     this.onDelete(this.team.id);
-  }
+  };
 
-  editTeam(editMode: boolean, team: Team) {
+  // Arrow function so as not to lose the context of 'this'
+  editTeam = (editMode: boolean, team: Team) => {
     this.openDialog(editMode, team);
-  }
+  };
 }

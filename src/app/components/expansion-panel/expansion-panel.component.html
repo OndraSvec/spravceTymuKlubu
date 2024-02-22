@@ -1,0 +1,27 @@
+<mat-expansion-panel [disabled]="!inputMembers.length">
+  <mat-expansion-panel-header>
+    <mat-panel-title class="responsive-text">
+      {{ input.name }}
+    </mat-panel-title>
+    <mat-panel-description>
+      {{ description }}
+    </mat-panel-description>
+  </mat-expansion-panel-header>
+  <mat-list>
+    @for (member of inputMembers; track member.id; let isLast = $last) {
+    <mat-list-item>
+      <span class="responsive-text-sm">
+        {{ member.firstName + " " + member.lastName }}
+      </span>
+    </mat-list-item>
+    @if (!isLast) {
+    <mat-divider></mat-divider>
+    } }
+  </mat-list>
+  <mat-action-row>
+    <button mat-button color="primary" (click)="editInput(true, input)">
+      Upravit
+    </button>
+    <button mat-button color="warn" (click)="deleteInput()">Smazat</button>
+  </mat-action-row>
+</mat-expansion-panel>

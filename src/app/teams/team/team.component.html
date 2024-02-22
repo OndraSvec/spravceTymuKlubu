@@ -1,4 +1,4 @@
-<mat-expansion-panel [disabled]="!teamMembers.length">
+<!-- <mat-expansion-panel [disabled]="!teamMembers.length">
   <mat-expansion-panel-header collapsedHeight="'auto" [expandedHeight]="'auto'">
     <mat-panel-title class="responsive-text">
       {{ team.name }}
@@ -25,3 +25,11 @@
     <button mat-button color="warn" (click)="deleteTeam()">Smazat</button>
   </mat-action-row>
 </mat-expansion-panel>
+ -->
+<app-expansion-panel
+  [inputMembers]="teamMembers"
+  [input]="team"
+  [description]="description"
+  [editInput]="editTeam"
+  [deleteInput]="deleteTeam"
+></app-expansion-panel>

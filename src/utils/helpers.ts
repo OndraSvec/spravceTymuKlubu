@@ -18,3 +18,9 @@ export function sortMembers(members: Member[]) {
     return result !== 0 ? result : a.firstName.localeCompare(b.firstName);
   });
 }
+
+export function outputTeamMembersCount(count: number, name: string): string {
+  return count === 0
+    ? `${name} nemá zatím žádného člena`
+    : `${name} má ${count} člen${count === 1 ? 'a' : count < 5 ? 'y' : 'ů'}`;
+}

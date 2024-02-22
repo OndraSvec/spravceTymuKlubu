@@ -8,11 +8,17 @@ import { MessageDisplayerComponent } from '../components/message-displayer/messa
 import { LoadingSpinnerComponent } from '../components/loading-spinner/loading-spinner.component';
 import { MatDialog } from '@angular/material/dialog';
 import { SimpleDialogComponent } from '../components/simple-dialog/simple-dialog.component';
+import { AddDBEntryButtonComponent } from '../components/add-dbentry-button/add-dbentry-button.component';
 
 @Component({
   selector: 'app-teams',
   standalone: true,
-  imports: [LoadingSpinnerComponent, MessageDisplayerComponent, TeamComponent],
+  imports: [
+    AddDBEntryButtonComponent,
+    LoadingSpinnerComponent,
+    MessageDisplayerComponent,
+    TeamComponent,
+  ],
   templateUrl: './teams.component.html',
   styleUrl: './teams.component.css',
 })

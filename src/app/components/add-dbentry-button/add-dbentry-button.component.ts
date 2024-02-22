@@ -24,4 +24,7 @@ export class AddDBEntryButtonComponent {
 
   @Input('openDialog')
   openDialog!: (member: Member, editMode: boolean) => void;
+
+  @Input('entry')
+  entry!: string;
 }

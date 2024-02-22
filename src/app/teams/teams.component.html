@@ -9,7 +9,9 @@
 <app-message-displayer
   message="Zatím nemáte žádné členy..."
 ></app-message-displayer>
-} } @placeholder (minimum 500ms) {
+}
+<app-add-dbentry-button entry="tým"></app-add-dbentry-button>
+} @placeholder (minimum 500ms) {
 <app-loading-spinner></app-loading-spinner>
 } } @else {
 <app-message-displayer

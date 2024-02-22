@@ -49,7 +49,10 @@
   message="Zatím nemáte žádné členy..."
 ></app-message-displayer>
 }
-<app-add-dbentry-button [openDialog]="openDialog"></app-add-dbentry-button>
+<app-add-dbentry-button
+  [openDialog]="openDialog"
+  entry="člena"
+></app-add-dbentry-button>
 } @placeholder (minimum 500ms) {
 <app-loading-spinner></app-loading-spinner>
 } } @else {

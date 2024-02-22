@@ -86,9 +86,15 @@ export class DialogComponent implements OnInit {
       selectedTeam: new FormControl(
         editMode ? teams.find((team) => team.id === member.teamId)?.id : ''
       ),
-      isInLineUp: new FormControl(editMode ? member.isInLineUp : false),
-      lineUpRole: new FormControl(editMode ? member.lineUpRole : ''),
-      lineUpPosition: new FormControl(editMode ? member.lineUpPosition : ''),
+      isInLineUp: new FormControl(
+        editMode && member.teamId ? member.isInLineUp : false
+      ),
+      lineUpRole: new FormControl(
+        editMode && member.teamId ? member.lineUpRole : ''
+      ),
+      lineUpPosition: new FormControl(
+        editMode && member.teamId ? member.lineUpPosition : ''
+      ),
     });
   }
 

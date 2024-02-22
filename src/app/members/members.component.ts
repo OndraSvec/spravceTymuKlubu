@@ -83,6 +83,7 @@ export class MembersComponent implements OnInit {
                   firstName: res.data.firstName,
                   lastName: res.data.lastName,
                   dob: datePickerFormatter(res.data.dob),
+                  teamId: res.data.selectedTeam,
                   isInLineUp: res.data.isInLineUp ? res.data.isInLineUp : false,
                   lineUpRole: res.data.lineUpRole ? res.data.lineUpRole : [],
                   lineUpPosition: res.data.lineUpPosition

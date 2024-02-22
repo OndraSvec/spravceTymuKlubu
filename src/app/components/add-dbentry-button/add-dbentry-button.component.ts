@@ -18,7 +18,7 @@ export class AddDBEntryButtonComponent {
     lastName: '',
     dob: '',
     teamId: '',
-    lineUpId: '',
+    isInLineUp: false,
     lineUpPosition: '',
     lineUpRole: [],
   };

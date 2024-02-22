@@ -36,6 +36,26 @@
         }
       </mat-select>
     </mat-form-field>
+    <mat-label>Přidat na soupisku</mat-label>
+    <mat-radio-group formControlName="isInLineUp" color="primary">
+      <mat-radio-button [value]="true">Ano</mat-radio-button>
+      <mat-radio-button [value]="false">Ne</mat-radio-button>
+    </mat-radio-group>
+    @if (isInLineUp?.value) {
+    <mat-form-field>
+      <mat-label>Role</mat-label>
+      <mat-select formControlName="lineUpRole" multiple>
+        @for (lineUpRole of lineUpRoles; track lineUpRole) {
+        <mat-option [value]="lineUpRole">{{ lineUpRole }}</mat-option>
+        }
+      </mat-select>
+    </mat-form-field>
+    @if(lineUpRole?.value.includes("Hráč")) {
+    <mat-form-field>
+      <mat-label>Pozice</mat-label>
+      <input matInput formControlName="lineUpPosition" placeholder="Pozice" />
+    </mat-form-field>
+    } }
   </mat-dialog-content>
   <mat-dialog-actions>
     <button mat-button mat-dialog-close [disabled]="!form.valid" type="submit">

@@ -22,6 +22,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { nanoid } from 'nanoid';
 import { MatOption, MatSelect } from '@angular/material/select';
+import { MatRadioModule } from '@angular/material/radio';
 import { Team } from '../../teams/team.type';
 
 @Component({
@@ -40,12 +41,14 @@ import { Team } from '../../teams/team.type';
     MatHint,
     MatSelect,
     MatOption,
+    MatRadioModule,
     ReactiveFormsModule,
   ],
   templateUrl: './dialog.component.html',
   styleUrl: './dialog.component.css',
 })
 export class DialogComponent implements OnInit {
+  public lineUpRoles = ['Hráč', 'Trenér'];
   private clubService: ClubService = inject(ClubService);
   private dialogRef: MatDialogRef<DialogComponent> = inject(MatDialogRef);
   form!: FormGroup;
@@ -54,6 +57,14 @@ export class DialogComponent implements OnInit {
     @Inject(MAT_DIALOG_DATA)
     public data: { member: Member; editMode: boolean; teams: Team[] }
   ) {}
+
+  get isInLineUp() {
+    return this.form.get('isInLineUp');
+  }
+
+  get lineUpRole() {
+    return this.form.get('lineUpRole');
+  }
 
   ngOnInit(): void {
     const { member, editMode, teams } = this.data;
@@ -71,6 +82,9 @@ export class DialogComponent implements OnInit {
       selectedTeam: new FormControl(
         editMode ? teams.find((team) => team.id === member.teamId)?.id : ''
       ),
+      isInLineUp: new FormControl(editMode ? member.isInLineUp : false),
+      lineUpRole: new FormControl(editMode ? member.lineUpRole : ''),
+      lineUpPosition: new FormControl(editMode ? member.lineUpPosition : ''),
     });
   }
 

@@ -4,7 +4,7 @@ export type Member = {
   lastName: string;
   dob: string;
   teamId: string;
-  lineUpId: string;
+  isInLineUp: boolean;
   lineUpPosition: string;
   lineUpRole: string[];
 };

@@ -91,7 +91,7 @@ export class MembersComponent implements OnInit {
             ...res.data,
             dob: datePickerFormatter(res.data.dob),
             teamId: res.data.selectedTeam,
-            lineUpId: '',
+            isInLineUp: false,
             lineUpPosition: '',
             lineUpRole: [],
           });

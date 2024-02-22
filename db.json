@@ -5,10 +5,11 @@
       "firstName": "David",
       "lastName": "Křepelka",
       "dob": "1982-11-17",
-      "teamId": "5Ct2EGMhbAi7HKhW6PDvJ",
+      "teamId": "bUAR6TmJkJNvwoLVMJSpk",
       "isInLineUp": true,
       "lineUpRole": [
-        "Hráč"
+        "Hráč",
+        "Trenér"
       ],
       "lineUpPosition": "Obránce"
     },
@@ -17,7 +18,7 @@
       "firstName": "Jakub",
       "lastName": "Polička",
       "dob": "1969-12-27",
-      "teamId": "5Ct2EGMhbAi7HKhW6PDvJ",
+      "teamId": null,
       "isInLineUp": true,
       "lineUpRole": [
         "Trenér"
@@ -29,7 +30,7 @@
       "firstName": "David",
       "lastName": "Sklenička",
       "dob": "2002-08-23",
-      "teamId": "5Ct2EGMhbAi7HKhW6PDvJ",
+      "teamId": null,
       "isInLineUp": true,
       "lineUpRole": [
         "Hráč"
@@ -39,7 +40,7 @@
   ],
   "teams": [
     {
-      "id": "5Ct2EGMhbAi7HKhW6PDvJ",
+      "id": "bUAR6TmJkJNvwoLVMJSpk",
       "name": "Tým A"
     }
   ]

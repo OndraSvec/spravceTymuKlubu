@@ -30,3 +30,11 @@ body {
 .responsive-text-sm {
   font-size: clamp(0.7rem, 3vw, 1rem);
 }
+
+span.mat-content {
+  height: 100%;
+}
+
+mat-panel-title {
+  height: 100%;
+}

@@ -69,8 +69,11 @@ export class TeamsComponent implements OnInit {
               : team
           );
         } else {
+          this.teams.push({
+            ...res.data,
+          });
           // Use concat to trigger the OnChanges mechanism
-          // this.members = ([] as Member[]).concat(sortMembers(this.members));
+          this.teams = ([] as Team[]).concat(this.teams);
         }
       }
     });

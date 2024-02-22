@@ -10,7 +10,10 @@
   message="Zatím nemáte žádné členy..."
 ></app-message-displayer>
 }
-<app-add-dbentry-button entry="tým"></app-add-dbentry-button>
+<app-add-dbentry-button
+  entry="tým"
+  [openTeamDialog]="openDialog"
+></app-add-dbentry-button>
 } @placeholder (minimum 500ms) {
 <app-loading-spinner></app-loading-spinner>
 } } @else {

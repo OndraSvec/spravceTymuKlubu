@@ -3,7 +3,11 @@
     mat-fab
     extended
     color="primary"
-    (click)="openDialog(dummyMember, false)"
+    (click)="
+      entry === 'člena'
+        ? openDialog(dummyMember, false)
+        : openTeamDialog(false, { id: '', name: '' })
+    "
   >
     <mat-icon>add</mat-icon>
     Přidat {{ entry }}

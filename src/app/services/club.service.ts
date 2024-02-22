@@ -85,7 +85,7 @@ export class ClubService {
   addTeam(id: string, name: string) {
     return this.httpClient
       .post(
-        this.baseUrl + 'members/',
+        this.baseUrl + 'teams/',
         JSON.stringify({
           id,
           name: name,

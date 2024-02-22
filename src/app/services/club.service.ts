@@ -27,10 +27,6 @@ export class ClubService {
     );
   }
 
-  getTeams() {
-    return this.httpClient.get<Team[]>(this.baseUrl + 'teams?_sort=name');
-  }
-
   deleteMember(id: string) {
     return this.httpClient.delete(this.baseUrl + 'members/' + id).subscribe();
   }
@@ -65,5 +61,13 @@ export class ClubService {
         })
       )
       .subscribe();
+  }
+
+  getTeams() {
+    return this.httpClient.get<Team[]>(this.baseUrl + 'teams?_sort=name');
+  }
+
+  deleteTeam(teamId: string) {
+    return this.httpClient.delete(this.baseUrl + 'teams/' + teamId).subscribe();
   }
 }

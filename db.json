@@ -55,7 +55,7 @@
       "firstName": "Kamil",
       "lastName": "Pačeska",
       "dob": "1998-06-08",
-      "teamId": "2",
+      "teamId": null,
       "lineUpId": "",
       "lineUpPosition": "",
       "lineUpRole": []
@@ -65,7 +65,7 @@
       "firstName": "Lukáš",
       "lastName": "Potůček",
       "dob": "1962-08-01",
-      "teamId": "2",
+      "teamId": null,
       "lineUpId": "",
       "lineUpPosition": "",
       "lineUpRole": []
@@ -155,7 +155,7 @@
       "firstName": "Josef",
       "lastName": "Janáček",
       "dob": "1998-08-19",
-      "teamId": "2",
+      "teamId": "1",
       "lineUpId": "",
       "lineUpPosition": "",
       "lineUpRole": []
@@ -165,7 +165,7 @@
       "firstName": "Ladislav",
       "lastName": "Potočka",
       "dob": "1997-11-29",
-      "teamId": "2",
+      "teamId": null,
       "lineUpId": "",
       "lineUpPosition": "",
       "lineUpRole": []
@@ -175,7 +175,7 @@
       "firstName": "Karel",
       "lastName": "Topůrka",
       "dob": "2004-12-30",
-      "teamId": "2",
+      "teamId": null,
       "lineUpId": "",
       "lineUpPosition": "",
       "lineUpRole": []
@@ -185,10 +185,6 @@
     {
       "id": "1",
       "name": "Tým A"
-    },
-    {
-      "id": "2",
-      "name": "Tým B"
     },
     {
       "id": "3",

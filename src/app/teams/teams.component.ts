@@ -35,4 +35,10 @@ export class TeamsComponent implements OnInit {
       error: () => (this.error = true),
     });
   }
+
+  // Arrow function so as not to lose the context of 'this'
+  onDelete = (teamId: string) => {
+    this.teams = this.teams.filter((team) => team.id !== teamId);
+    return this.clubService.deleteTeam(teamId);
+  };
 }

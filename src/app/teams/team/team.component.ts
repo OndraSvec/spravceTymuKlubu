@@ -5,11 +5,13 @@ import { Member } from '../../members/member.type';
 import { OutputTeamMembersCountPipe } from '../../pipes/output-team-members-count.pipe';
 import { MatList, MatListItem } from '@angular/material/list';
 import { MatDivider } from '@angular/material/divider';
+import { MatButton } from '@angular/material/button';
 
 @Component({
   selector: 'app-team',
   standalone: true,
   imports: [
+    MatButton,
     MatDivider,
     MatExpansionModule,
     MatList,
@@ -22,13 +24,22 @@ import { MatDivider } from '@angular/material/divider';
 export class TeamComponent implements OnInit {
   @Input('members')
   public members!: Member[];
+
   @Input('team')
   public team!: Team;
+
+  @Input('onDelete')
+  onDelete!: (teamId: string) => void;
+
   public teamMembers: Member[] = [];
 
   ngOnInit(): void {
     this.teamMembers = this.members.filter(
       (member) => member.teamId === this.team.id
     );
+  }
+
+  deleteTeam() {
+    this.onDelete(this.team.id);
   }
 }

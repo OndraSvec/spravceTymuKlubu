@@ -1,11 +1,7 @@
 import { Component, OnInit, inject } from '@angular/core';
 import { MatList, MatListItem } from '@angular/material/list';
 import { MatTableModule } from '@angular/material/table';
-import {
-  MatDialog,
-  MatDialogModule,
-  MatDialogRef,
-} from '@angular/material/dialog';
+import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { ClubService } from '../services/club.service';
 import { forkJoin } from 'rxjs';
 import { Member } from './member.type';
@@ -45,8 +41,7 @@ import { Team } from '../teams/team.type';
 export class MembersComponent implements OnInit {
   private clubService: ClubService = inject(ClubService);
   private teams: Team[] = [];
-  protected dialog: MatDialog = inject(MatDialog);
-  protected dialogRef!: MatDialogRef<DialogComponent, any>;
+  private dialog: MatDialog = inject(MatDialog);
   public members: Member[] = [];
   public columnsToDisplay = ['name', 'dob', 'age', 'actions'];
   public loading = false;

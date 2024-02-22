@@ -9,6 +9,9 @@ type MemberFormData = {
   lastName: string;
   dob: Date;
   selectedTeam: string;
+  isInLineUp: boolean;
+  lineUpRole?: string[];
+  lineUpPosition?: string;
 };
 
 @Injectable({
@@ -40,6 +43,11 @@ export class ClubService {
           lastName: formData.lastName,
           dob: datePickerFormatter(formData.dob),
           teamId: formData.selectedTeam,
+          isInLineUp: formData.isInLineUp,
+          lineUpRole: formData.lineUpRole ? formData.lineUpRole : [],
+          lineUpPosition: formData.lineUpPosition
+            ? formData.lineUpPosition
+            : '',
         })
       )
       .subscribe();
@@ -55,9 +63,11 @@ export class ClubService {
           lastName: formData.lastName,
           dob: datePickerFormatter(formData.dob),
           teamId: formData.selectedTeam,
-          lineUpId: '',
-          lineUpPosition: '',
-          lineUpRole: [],
+          isInLineUp: formData.isInLineUp,
+          lineUpRole: formData.lineUpRole ? formData.lineUpRole : [],
+          lineUpPosition: formData.lineUpPosition
+            ? formData.lineUpPosition
+            : '',
         })
       )
       .subscribe();

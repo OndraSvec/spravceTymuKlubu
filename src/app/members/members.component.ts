@@ -83,6 +83,11 @@ export class MembersComponent implements OnInit {
                   firstName: res.data.firstName,
                   lastName: res.data.lastName,
                   dob: datePickerFormatter(res.data.dob),
+                  isInLineUp: res.data.isInLineUp ? res.data.isInLineUp : false,
+                  lineUpRole: res.data.lineUpRole ? res.data.lineUpRole : [],
+                  lineUpPosition: res.data.lineUpPosition
+                    ? res.data.lineUpPosition
+                    : '',
                 }
               : member
           );
@@ -91,9 +96,11 @@ export class MembersComponent implements OnInit {
             ...res.data,
             dob: datePickerFormatter(res.data.dob),
             teamId: res.data.selectedTeam,
-            isInLineUp: false,
-            lineUpPosition: '',
-            lineUpRole: [],
+            isInLineUp: res.data.isInLineUp ? res.data.isInLineUp : false,
+            lineUpRole: res.data.lineUpRole ? res.data.lineUpRole : [],
+            lineUpPosition: res.data.lineUpPosition
+              ? res.data.lineUpPosition
+              : '',
           });
           // Use concat to trigger the OnChanges mechanism
           this.members = ([] as Member[]).concat(sortMembers(this.members));

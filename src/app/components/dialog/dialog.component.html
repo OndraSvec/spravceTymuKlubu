@@ -28,6 +28,7 @@
       ></mat-datepicker-toggle>
       <mat-datepicker #picker></mat-datepicker>
     </mat-form-field>
+    @if (this.data.teams.length > 0) {
     <mat-form-field>
       <mat-label>Tým</mat-label>
       <mat-select formControlName="selectedTeam">
@@ -36,6 +37,8 @@
         }
       </mat-select>
     </mat-form-field>
+
+    @if (selectedTeam?.value) {
     <mat-label>Přidat na soupisku</mat-label>
     <mat-radio-group formControlName="isInLineUp" color="primary">
       <mat-radio-button [value]="true">Ano</mat-radio-button>
@@ -55,7 +58,7 @@
       <mat-label>Pozice</mat-label>
       <input matInput formControlName="lineUpPosition" placeholder="Pozice" />
     </mat-form-field>
-    } }
+    } } } }
   </mat-dialog-content>
   <mat-dialog-actions>
     <button mat-button mat-dialog-close [disabled]="!form.valid" type="submit">

@@ -1,4 +1,39 @@
 {
-  "members": [],
-  "teams": []
+  "members": [
+    {
+      "id": "kyjfVvMZS52hpzFdo9eQ-",
+      "firstName": "David",
+      "lastName": "Křepelka",
+      "dob": "1982-11-17",
+      "teamId": "ZCxleGqXxY_ZLJOBDsOio",
+      "isInLineUp": true,
+      "lineUpRole": [
+        "Hráč"
+      ],
+      "lineUpPosition": "Obránce"
+    },
+    {
+      "id": "m0GYIbrSMcLS9kqsN4LTN",
+      "firstName": "Jakub",
+      "lastName": "Polička",
+      "dob": "1969-12-27",
+      "teamId": null,
+      "isInLineUp": true,
+      "lineUpRole": [
+        "Hráč",
+        "Trenér"
+      ],
+      "lineUpPosition": "Brankář"
+    }
+  ],
+  "teams": [
+    {
+      "id": "ZCxleGqXxY_ZLJOBDsOio",
+      "name": "Tým A"
+    },
+    {
+      "id": "TLbnRJIAK4LbpRjlqKxFG",
+      "name": "Tým C"
+    }
+  ]
 }

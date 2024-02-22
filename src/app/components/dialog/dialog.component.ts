@@ -58,6 +58,10 @@ export class DialogComponent implements OnInit {
     public data: { member: Member; editMode: boolean; teams: Team[] }
   ) {}
 
+  get selectedTeam() {
+    return this.form.get('selectedTeam');
+  }
+
   get isInLineUp() {
     return this.form.get('isInLineUp');
   }

@@ -39,6 +39,8 @@ export class TeamComponent implements OnInit {
 
   public teamMembers: Member[] = [];
   public description!: string;
+  public tableColumns = ['name'];
+  public tableTitles = ['Jméno'];
 
   ngOnInit(): void {
     this.teamMembers = this.members.filter(

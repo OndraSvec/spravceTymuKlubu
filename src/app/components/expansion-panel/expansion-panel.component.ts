@@ -6,11 +6,19 @@ import { MatList, MatListItem } from '@angular/material/list';
 import { Member } from '../../members/member.type';
 import { Team } from '../../teams/team.type';
 import { LineUp } from '../../line-ups/line-up.type';
+import { MatTableModule } from '@angular/material/table';
 
 @Component({
   selector: 'app-expansion-panel',
   standalone: true,
-  imports: [MatButton, MatDivider, MatExpansionModule, MatList, MatListItem],
+  imports: [
+    MatButton,
+    MatDivider,
+    MatExpansionModule,
+    MatList,
+    MatListItem,
+    MatTableModule,
+  ],
   templateUrl: './expansion-panel.component.html',
   styleUrl: './expansion-panel.component.css',
 })
@@ -32,4 +40,10 @@ export class ExpansionPanelComponent {
 
   @Input('deleteInput')
   deleteInput!: () => void;
+
+  @Input('columnsToDisplay')
+  columnsToDisplay: string[] = [];
+
+  @Input('titlesToDisplay')
+  titlesToDisplay: string[] = [];
 }

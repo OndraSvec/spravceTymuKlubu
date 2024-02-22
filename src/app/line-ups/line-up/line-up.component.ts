@@ -20,6 +20,8 @@ export class LineUpComponent implements OnInit {
 
   public lineUpMembers: Member[] = [];
   public description!: string;
+  public tableColumns = ['name', 'lineUpRole', 'lineUpPosition'];
+  public tableTitles = ['Jméno', 'Role', 'Pozice'];
 
   ngOnInit(): void {
     this.lineUpMembers = this.members.filter(

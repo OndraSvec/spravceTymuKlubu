@@ -7,20 +7,24 @@
       {{ description }}
     </mat-panel-description>
   </mat-expansion-panel-header>
-  <mat-list>
-    @for (member of inputMembers; track member.id; let isLast = $last) {
-    <mat-list-item>
-      <span class="responsive-text-sm">
-        {{ member.firstName + " " + member.lastName }}
-      </span>
-      @if (!actionable) {
-      <span class="responsive-text-sm">- {{ member.lineUpRole }}</span>
-      }
-    </mat-list-item>
-    @if (!isLast) {
-    <mat-divider></mat-divider>
-    } }
-  </mat-list>
+  <table mat-table [dataSource]="inputMembers">
+    @for(column of columnsToDisplay; track column; let idx = $index) {
+    <ng-container [matColumnDef]="column">
+      <th class="responsive-text" mat-header-cell *matHeaderCellDef>
+        {{ titlesToDisplay[idx] }}
+      </th>
+      <td class="responsive-text-sm" mat-cell *matCellDef="let member">
+        {{
+          column === "name"
+            ? member.firstName + " " + member.lastName
+            : member[column]
+        }}
+      </td>
+    </ng-container>
+    }
+    <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
+    <tr mat-row *matRowDef="let myRowData; columns: columnsToDisplay"></tr>
+  </table>
   @if(actionable) {
   <mat-action-row>
     <button mat-button color="primary" (click)="editInput(true, input)">

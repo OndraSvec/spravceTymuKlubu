@@ -26,3 +26,7 @@ body {
 .responsive-text {
   font-size: clamp(0.8rem, 3vw, 1.25rem);
 }
+
+.responsive-text-sm {
+  font-size: clamp(0.7rem, 3vw, 1rem);
+}

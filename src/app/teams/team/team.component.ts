@@ -3,11 +3,19 @@ import { MatExpansionModule } from '@angular/material/expansion';
 import { Team } from '../team.type';
 import { Member } from '../../members/member.type';
 import { OutputTeamMembersCountPipe } from '../../pipes/output-team-members-count.pipe';
+import { MatList, MatListItem } from '@angular/material/list';
+import { MatDivider } from '@angular/material/divider';
 
 @Component({
   selector: 'app-team',
   standalone: true,
-  imports: [MatExpansionModule, OutputTeamMembersCountPipe],
+  imports: [
+    MatDivider,
+    MatExpansionModule,
+    MatList,
+    MatListItem,
+    OutputTeamMembersCountPipe,
+  ],
   templateUrl: './team.component.html',
   styleUrl: './team.component.css',
 })

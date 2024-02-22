@@ -7,7 +7,14 @@
       {{ teamMembers.length | outputTeamMembersCount : team.name }}
     </mat-panel-description>
   </mat-expansion-panel-header>
-  @for (member of teamMembers; track member.id) {
-  <p>{{ member.firstName + " " + member.lastName }}</p>
-  }
+  <mat-list>
+    @for (member of teamMembers; track member.id) {
+    <mat-list-item>
+      <span class="responsive-text-sm">
+        {{ member.firstName + " " + member.lastName }}
+      </span>
+    </mat-list-item>
+    <mat-divider></mat-divider>
+    }
+  </mat-list>
 </mat-expansion-panel>

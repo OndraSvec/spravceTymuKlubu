@@ -28,6 +28,14 @@
       ></mat-datepicker-toggle>
       <mat-datepicker #picker></mat-datepicker>
     </mat-form-field>
+    <mat-form-field>
+      <mat-label>Tým</mat-label>
+      <mat-select formControlName="selectedTeam">
+        @for (team of data.teams; track team.id) {
+        <mat-option [value]="team.id">{{ team.name }}</mat-option>
+        }
+      </mat-select>
+    </mat-form-field>
   </mat-dialog-content>
   <mat-dialog-actions>
     <button mat-button mat-dialog-close [disabled]="!form.valid" type="submit">

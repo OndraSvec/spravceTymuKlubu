@@ -21,6 +21,8 @@ import { MatFormField, MatHint, MatLabel } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { nanoid } from 'nanoid';
+import { MatOption, MatSelect } from '@angular/material/select';
+import { Team } from '../../teams/team.type';
 
 @Component({
   selector: 'app-dialog',
@@ -36,6 +38,8 @@ import { nanoid } from 'nanoid';
     MatInputModule,
     MatLabel,
     MatHint,
+    MatSelect,
+    MatOption,
     ReactiveFormsModule,
   ],
   templateUrl: './dialog.component.html',
@@ -47,11 +51,12 @@ export class DialogComponent implements OnInit {
   form!: FormGroup;
 
   constructor(
-    @Inject(MAT_DIALOG_DATA) public data: { member: Member; editMode: boolean }
+    @Inject(MAT_DIALOG_DATA)
+    public data: { member: Member; editMode: boolean; teams: Team[] }
   ) {}
 
   ngOnInit(): void {
-    const { member, editMode } = this.data;
+    const { member, editMode, teams } = this.data;
 
     this.form = new FormGroup({
       firstName: new FormControl(editMode ? member.firstName : '', [
@@ -63,6 +68,9 @@ export class DialogComponent implements OnInit {
       dob: new FormControl(editMode ? datePickerFormatter(member.dob) : '', [
         Validators.required,
       ]),
+      selectedTeam: new FormControl(
+        editMode ? teams.find((team) => team.id === member.teamId)?.id : ''
+      ),
     });
   }
 

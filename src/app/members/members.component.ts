@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit, inject } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { MatList, MatListItem } from '@angular/material/list';
 import { MatTableModule } from '@angular/material/table';
 import {
@@ -7,7 +7,7 @@ import {
   MatDialogRef,
 } from '@angular/material/dialog';
 import { ClubService } from '../services/club.service';
-import { Subscription } from 'rxjs';
+import { forkJoin } from 'rxjs';
 import { Member } from './member.type';
 import { AgePipe } from '../pipes/age.pipe';
 import { DateOfBirthPipe } from '../pipes/date-of-birth.pipe';
@@ -19,6 +19,7 @@ import { MatIcon } from '@angular/material/icon';
 import { DialogComponent } from '../components/dialog/dialog.component';
 import { AddDBEntryButtonComponent } from '../components/add-dbentry-button/add-dbentry-button.component';
 import { datePickerFormatter, sortMembers } from '../../utils/helpers';
+import { Team } from '../teams/team.type';
 
 @Component({
   selector: 'app-members',
@@ -41,9 +42,9 @@ import { datePickerFormatter, sortMembers } from '../../utils/helpers';
   templateUrl: './members.component.html',
   styleUrl: './members.component.css',
 })
-export class MembersComponent implements OnInit, OnDestroy {
+export class MembersComponent implements OnInit {
   private clubService: ClubService = inject(ClubService);
-  private membersSub!: Subscription;
+  private teams: Team[] = [];
   protected dialog: MatDialog = inject(MatDialog);
   protected dialogRef!: MatDialogRef<DialogComponent, any>;
   public members: Member[] = [];
@@ -53,17 +54,17 @@ export class MembersComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.loading = true;
-    this.membersSub = this.clubService.getMembers().subscribe({
-      next: (members) => {
-        this.members = members;
+    forkJoin({
+      membersReq: this.clubService.getMembers(),
+      teamsReq: this.clubService.getTeams(),
+    }).subscribe({
+      next: ({ membersReq, teamsReq }) => {
+        this.members = membersReq;
+        this.teams = teamsReq;
         this.loading = false;
       },
       error: () => (this.error = true),
     });
-  }
-
-  ngOnDestroy(): void {
-    this.membersSub.unsubscribe();
   }
 
   onDelete(id: string) {
@@ -74,7 +75,7 @@ export class MembersComponent implements OnInit, OnDestroy {
   // Use an arrow function so as not to lose 'this'
   openDialog = (member: Member, editMode: boolean) => {
     const dialogRef = this.dialog.open(DialogComponent, {
-      data: { member, editMode },
+      data: { member, editMode, teams: this.teams },
     });
 
     dialogRef.afterClosed().subscribe((res) => {
@@ -94,7 +95,7 @@ export class MembersComponent implements OnInit, OnDestroy {
           this.members.push({
             ...res.data,
             dob: datePickerFormatter(res.data.dob),
-            teamId: '',
+            teamId: res.data.selectedTeam,
             lineUpId: '',
             lineUpPosition: '',
             lineUpRole: [],

@@ -31,7 +31,6 @@ export class TeamsComponent implements OnInit {
         this.members = membersReq;
         this.teams = teamsReq;
         this.loading = false;
-        console.log(this.members, this.teams);
       },
       error: () => (this.error = true),
     });

@@ -8,6 +8,7 @@ type MemberFormData = {
   firstName: string;
   lastName: string;
   dob: Date;
+  selectedTeam: string;
 };
 
 @Injectable({
@@ -42,6 +43,7 @@ export class ClubService {
           firstName: formData.firstName,
           lastName: formData.lastName,
           dob: datePickerFormatter(formData.dob),
+          teamId: formData.selectedTeam,
         })
       )
       .subscribe();
@@ -56,7 +58,7 @@ export class ClubService {
           firstName: formData.firstName,
           lastName: formData.lastName,
           dob: datePickerFormatter(formData.dob),
-          teamId: '',
+          teamId: formData.selectedTeam,
           lineUpId: '',
           lineUpPosition: '',
           lineUpRole: [],

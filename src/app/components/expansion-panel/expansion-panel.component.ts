@@ -24,6 +24,9 @@ export class ExpansionPanelComponent {
   @Input('description')
   description!: string;
 
+  @Input('actionable')
+  actionable!: boolean;
+
   @Input('editInput')
   editInput!: (editMode: boolean, input: Team | LineUp) => void;
 

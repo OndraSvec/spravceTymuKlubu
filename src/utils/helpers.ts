@@ -24,3 +24,20 @@ export function outputTeamMembersCount(count: number, name: string): string {
     ? `${name} nemá zatím žádného člena`
     : `${name} má ${count} člen${count === 1 ? 'a' : count < 5 ? 'y' : 'ů'}`;
 }
+
+export function outputLineUpInfo(team: Member[], teamName: string): string {
+  const playerCount = team.reduce(
+    (acc, cur) => (acc += cur.lineUpRole.includes('Hráč') ? 1 : 0),
+    0
+  );
+  const coachCount = team.reduce(
+    (acc, cur) => (acc += cur.lineUpRole.includes('Trenér') ? 1 : 0),
+    0
+  );
+
+  return `${teamName} má ${playerCount} hráč${
+    playerCount === 0 || playerCount > 4 ? 'ů' : 'e'
+  }, ${coachCount} trenér${
+    coachCount === 0 || coachCount > 4 ? 'ů' : coachCount === 1 ? 'a' : 'y'
+  }`;
+}

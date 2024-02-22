@@ -1,35 +1,8 @@
-<!-- <mat-expansion-panel [disabled]="!teamMembers.length">
-  <mat-expansion-panel-header collapsedHeight="'auto" [expandedHeight]="'auto'">
-    <mat-panel-title class="responsive-text">
-      {{ team.name }}
-    </mat-panel-title>
-    <mat-panel-description>
-      {{ teamMembers.length | outputTeamMembersCount : team.name }}
-    </mat-panel-description>
-  </mat-expansion-panel-header>
-  <mat-list>
-    @for (member of teamMembers; track member.id; let isLast = $last) {
-    <mat-list-item>
-      <span class="responsive-text-sm">
-        {{ member.firstName + " " + member.lastName }}
-      </span>
-    </mat-list-item>
-    @if (!isLast) {
-    <mat-divider></mat-divider>
-    } }
-  </mat-list>
-  <mat-action-row>
-    <button mat-button color="primary" (click)="editTeam(true, team)">
-      Upravit
-    </button>
-    <button mat-button color="warn" (click)="deleteTeam()">Smazat</button>
-  </mat-action-row>
-</mat-expansion-panel>
- -->
 <app-expansion-panel
   [inputMembers]="teamMembers"
   [input]="team"
   [description]="description"
   [editInput]="editTeam"
   [deleteInput]="deleteTeam"
+  [actionable]="true"
 ></app-expansion-panel>

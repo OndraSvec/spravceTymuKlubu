@@ -1,11 +1,13 @@
-<p>line-ups works!</p>
-<!-- <ng-container matColumnDef="role">
-    <th mat-header-cell *matHeaderCellDef>Role</th>
-    <td mat-cell *matCellDef="let member">
-      @for (role of member.lineUpRole; track $index; let isLast = $last) {
-      <span>{{ isLast ? role : role + ", " }}</span>
-      } @empty {
-      <span>nepřiřazena</span>
-      }
-    </td>
-  </ng-container> -->
+@if (!error) { @defer (when !loading) { @for (team of teams; track team.id) {
+<app-line-up [team]="team" [members]="members"></app-line-up>
+} @empty {
+<app-message-displayer
+  message="Nejprve přidejte nějaké týmy..."
+></app-message-displayer>
+} } @placeholder (minimum 500ms) {
+<app-loading-spinner></app-loading-spinner>
+} } @else {
+<app-message-displayer
+  message="Ups, data se nepodařilo načíst..."
+></app-message-displayer>
+}

@@ -13,15 +13,20 @@
       <span class="responsive-text-sm">
         {{ member.firstName + " " + member.lastName }}
       </span>
+      @if (!actionable) {
+      <span class="responsive-text-sm">- {{ member.lineUpRole }}</span>
+      }
     </mat-list-item>
     @if (!isLast) {
     <mat-divider></mat-divider>
     } }
   </mat-list>
+  @if(actionable) {
   <mat-action-row>
     <button mat-button color="primary" (click)="editInput(true, input)">
       Upravit
     </button>
     <button mat-button color="warn" (click)="deleteInput()">Smazat</button>
   </mat-action-row>
+  }
 </mat-expansion-panel>

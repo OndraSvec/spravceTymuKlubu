@@ -70,4 +70,27 @@ export class ClubService {
   deleteTeam(teamId: string) {
     return this.httpClient.delete(this.baseUrl + 'teams/' + teamId).subscribe();
   }
+
+  editTeam(id: string, name: string) {
+    return this.httpClient
+      .patch(
+        this.baseUrl + 'teams/' + id,
+        JSON.stringify({
+          name,
+        })
+      )
+      .subscribe();
+  }
+
+  addTeam(id: string, name: string) {
+    return this.httpClient
+      .post(
+        this.baseUrl + 'members/',
+        JSON.stringify({
+          id,
+          name: name,
+        })
+      )
+      .subscribe();
+  }
 }

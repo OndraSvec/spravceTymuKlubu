@@ -31,6 +31,9 @@ export class TeamComponent implements OnInit {
   @Input('onDelete')
   onDelete!: (teamId: string) => void;
 
+  @Input('openDialog')
+  openDialog!: (editMode: boolean, team: Team) => void;
+
   public teamMembers: Member[] = [];
 
   ngOnInit(): void {
@@ -41,5 +44,9 @@ export class TeamComponent implements OnInit {
 
   deleteTeam() {
     this.onDelete(this.team.id);
+  }
+
+  editTeam(editMode: boolean, team: Team) {
+    this.openDialog(editMode, team);
   }
 }

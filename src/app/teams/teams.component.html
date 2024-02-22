@@ -1,5 +1,10 @@
 @if (!error) { @defer (when !loading) { @for (team of teams; track team.id) {
-<app-team [team]="team" [members]="members" [onDelete]="onDelete"></app-team>
+<app-team
+  [team]="team"
+  [members]="members"
+  [onDelete]="onDelete"
+  [openDialog]="openDialog"
+></app-team>
 } @empty {
 <app-message-displayer
   message="Zatím nemáte žádné členy..."

@@ -19,7 +19,9 @@
     } }
   </mat-list>
   <mat-action-row>
-    <button mat-button color="primary">Upravit</button>
+    <button mat-button color="primary" (click)="editTeam(true, team)">
+      Upravit
+    </button>
     <button mat-button color="warn" (click)="deleteTeam()">Smazat</button>
   </mat-action-row>
 </mat-expansion-panel>

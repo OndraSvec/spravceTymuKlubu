@@ -1,0 +1,18 @@
+<h2 mat-dialog-title>
+  {{ data.editMode ? "Úprava údajů člena" : "Nový člen" }}
+</h2>
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <mat-dialog-content>
+    <mat-form-field appearance="fill">
+      <mat-label>Název</mat-label>
+      <input matInput formControlName="name" placeholder="Název týmu" />
+      <mat-hint>Toto pole je povinné</mat-hint>
+    </mat-form-field>
+  </mat-dialog-content>
+  <mat-dialog-actions>
+    <button mat-button mat-dialog-close [disabled]="!form.valid" type="submit">
+      OK
+    </button>
+    <button mat-button mat-dialog-close>Zrušit</button>
+  </mat-dialog-actions>
+</form>

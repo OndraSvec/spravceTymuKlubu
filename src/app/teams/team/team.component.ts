@@ -2,7 +2,6 @@ import { Component, Input, OnInit } from '@angular/core';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { Team } from '../team.type';
 import { Member } from '../../members/member.type';
-import { OutputTeamMembersCountPipe } from '../../pipes/output-team-members-count.pipe';
 import { MatList, MatListItem } from '@angular/material/list';
 import { MatDivider } from '@angular/material/divider';
 import { MatButton } from '@angular/material/button';
@@ -18,7 +17,6 @@ import { outputTeamMembersCount } from '../../../utils/helpers';
     MatExpansionModule,
     MatList,
     MatListItem,
-    OutputTeamMembersCountPipe,
     ExpansionPanelComponent,
   ],
   templateUrl: './team.component.html',

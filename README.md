@@ -1,27 +1,32 @@
 # SpravceTymuKlubu
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.2.
+Aplikace SpravceTymuKlubu slouží pro správu členů, týmů a soupisek daného sportovního klubu. Konkrétně možňuje vytvářet, upravovat, prohlížet a mazat informace o členech, týmech a soupiskách.
 
-## Development server
+## Funkce
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- Vyhledávání v databázi členů dle křestního jména či příjmení
+- Zobrazení seznamu členů, včetně filtrace na základě vyhledávání
+- Přidání nového člena
+- Úprava údajů člena, včetně přiřazení týmu a přidání na soupisku
+- Smazání člena
+- Zobrazení týmů, včetně přiřazených členů
+- Přidání týmu
+- Úprava názvu týmu
+- Smazání týmu
+- Zobrazení soupisek, včetně přiřazených členů, jejich rolí a pozic
 
-## Code scaffolding
+## Instalace a spuštění projektu
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Naklonujte repozitář a nainstalujte závislosti:
 
-## Build
+- `git clone git@github.com:OndraSvec/spravceTymuKlubu.git`
+- `npm i`
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Spusťte server pro vývojové prostředí a server pro simulaci databáze:
 
-## Running unit tests
+- `ng serve`
+- `npm run json:server`
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Aplikaci najdete na:
 
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+- `http://localhost:4200/`

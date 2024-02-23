@@ -85,10 +85,14 @@ export class MembersComponent implements OnInit {
                   dob: datePickerFormatter(res.data.dob),
                   teamId: res.data.selectedTeam,
                   isInLineUp: res.data.isInLineUp ? res.data.isInLineUp : false,
-                  lineUpRole: res.data.lineUpRole ? res.data.lineUpRole : [],
-                  lineUpPosition: res.data.lineUpPosition
-                    ? res.data.lineUpPosition
-                    : '',
+                  lineUpRole:
+                    res.data.lineUpRole && res.data.isInLineUp
+                      ? res.data.lineUpRole
+                      : [],
+                  lineUpPosition:
+                    res.data.lineUpPosition && res.data.isInLineUp
+                      ? res.data.lineUpPosition
+                      : '',
                 }
               : member
           );

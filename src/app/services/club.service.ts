@@ -44,10 +44,14 @@ export class ClubService {
           dob: datePickerFormatter(formData.dob),
           teamId: formData.selectedTeam,
           isInLineUp: formData.isInLineUp,
-          lineUpRole: formData.lineUpRole ? formData.lineUpRole : [],
-          lineUpPosition: formData.lineUpPosition
-            ? formData.lineUpPosition
-            : '',
+          lineUpRole:
+            formData.lineUpRole && formData.isInLineUp
+              ? formData.lineUpRole
+              : [],
+          lineUpPosition:
+            formData.lineUpPosition && formData.isInLineUp
+              ? formData.lineUpPosition
+              : '',
         })
       )
       .subscribe();

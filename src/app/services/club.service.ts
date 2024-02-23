@@ -26,7 +26,7 @@ export class ClubService {
 
   getMembers() {
     return this.httpClient.get<Member[]>(
-      this.baseUrl + 'members?_sort=lastName, firstName'
+      this.baseUrl + 'members?_sort=lastName,firstName'
     );
   }
 

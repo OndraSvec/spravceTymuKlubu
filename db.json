@@ -36,6 +36,18 @@
         "Trenér"
       ],
       "lineUpPosition": "Brankář"
+    },
+    {
+      "id": "ePsCAn-93zCzna-V1IP4C",
+      "firstName": "Adam",
+      "lastName": "Stolbenko",
+      "dob": "1993-03-03",
+      "teamId": "3NOa9xgPqugt4N7nl7OGW",
+      "isInLineUp": true,
+      "lineUpRole": [
+        "Hráč"
+      ],
+      "lineUpPosition": "Záložník"
     }
   ],
   "teams": [

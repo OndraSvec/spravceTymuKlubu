@@ -102,8 +102,6 @@ export class DialogComponent implements OnInit {
     const { editMode } = this.data;
     const newId = nanoid();
 
-    console.log(this.data);
-
     this.dialogRef.close({
       editMode,
       data: {

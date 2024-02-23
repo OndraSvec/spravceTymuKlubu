@@ -44,6 +44,7 @@ export class MembersComponent implements OnInit {
   private dialog: MatDialog = inject(MatDialog);
   public members: Member[] = [];
   public columnsToDisplay = ['name', 'dob', 'age', 'actions'];
+  public titlesToDisplay = ['Jméno', 'Datum narození', 'Věk', 'Akce'];
   public loading = false;
   public error = false;
 

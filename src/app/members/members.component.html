@@ -1,28 +1,18 @@
 @if (!error) { @defer (when !loading) { @if (members.length > 0) {
 <table mat-table [dataSource]="members">
-  <ng-container matColumnDef="name">
-    <th class="responsive-text" mat-header-cell *matHeaderCellDef>Jméno</th>
-    <td class="responsive-text" mat-cell *matCellDef="let member">
-      {{ member.firstName + " " + member.lastName }}
-    </td>
-  </ng-container>
-  <ng-container matColumnDef="dob">
+  @for(column of columnsToDisplay; track column; let idx = $index) {
+  <ng-container [matColumnDef]="column">
     <th class="responsive-text" mat-header-cell *matHeaderCellDef>
-      Datum narození
+      {{ titlesToDisplay[idx] }}
     </th>
-    <td class="responsive-text" mat-cell *matCellDef="let member">
+    <td class="responsive-text-sm" mat-cell *matCellDef="let member">
+      @if (column === "name") {
+      {{ member.firstName + " " + member.lastName }}
+      } @else if (column === "dob") {
       {{ member.dob | dateOfBirth }}
-    </td>
-  </ng-container>
-  <ng-container matColumnDef="age">
-    <th class="responsive-text" mat-header-cell *matHeaderCellDef>Věk</th>
-    <td class="responsive-text" mat-cell *matCellDef="let member">
+      } @else if (column === "age") {
       {{ member.dob | age }}
-    </td>
-  </ng-container>
-  <ng-container matColumnDef="actions">
-    <th class="responsive-text" mat-header-cell *matHeaderCellDef>Akce</th>
-    <td class="responsive-text" mat-cell *matCellDef="let member">
+      } @else {
       <button
         [style]="{ transform: 'scale(0.75)' }"
         mat-mini-fab
@@ -39,8 +29,10 @@
       >
         <mat-icon>delete</mat-icon>
       </button>
+      }
     </td>
   </ng-container>
+  }
   <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
   <tr mat-row *matRowDef="let myRowData; columns: columnsToDisplay"></tr>
 </table>

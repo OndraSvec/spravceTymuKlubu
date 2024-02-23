@@ -7,12 +7,13 @@
       {{ description }}
     </mat-panel-description>
   </mat-expansion-panel-header>
+  @if (inputMembers.length) {
   <app-table
     [inputMembers]="inputMembers"
     [columnsToDisplay]="columnsToDisplay"
     [titlesToDisplay]="titlesToDisplay"
   ></app-table>
-  @if(actionable) {
+  } @if(actionable) {
   <mat-action-row>
     <button mat-button color="primary" (click)="editInput(true, input)">
       Upravit

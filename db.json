@@ -1,40 +1,16 @@
 {
   "members": [
     {
-      "id": "kyjfVvMZS52hpzFdo9eQ-",
+      "id": "vn7iLId-KbUquow90XXwX",
       "firstName": "David",
-      "lastName": "Křepelka",
-      "dob": "1982-11-17",
+      "lastName": "Peterka",
+      "dob": "1992-12-18",
       "teamId": "bUAR6TmJkJNvwoLVMJSpk",
       "isInLineUp": true,
       "lineUpRole": [
         "Hráč"
       ],
       "lineUpPosition": "Obránce"
-    },
-    {
-      "id": "m0GYIbrSMcLS9kqsN4LTN",
-      "firstName": "Jakub",
-      "lastName": "Polička",
-      "dob": "1969-12-27",
-      "teamId": "bUAR6TmJkJNvwoLVMJSpk",
-      "isInLineUp": true,
-      "lineUpRole": [
-        "Trenér"
-      ],
-      "lineUpPosition": ""
-    },
-    {
-      "id": "ldHU47S3jlnrsxNNUVHn4",
-      "firstName": "David",
-      "lastName": "Sklenička",
-      "dob": "2002-08-23",
-      "teamId": "bUAR6TmJkJNvwoLVMJSpk",
-      "isInLineUp": true,
-      "lineUpRole": [
-        "Hráč"
-      ],
-      "lineUpPosition": "Útočník"
     }
   ],
   "teams": [

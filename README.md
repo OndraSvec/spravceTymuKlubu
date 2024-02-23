@@ -20,6 +20,7 @@ Aplikace SpravceTymuKlubu slouží pro správu členů, týmů a soupisek danéh
 Naklonujte repozitář a nainstalujte závislosti:
 
 - `git clone git@github.com:OndraSvec/spravceTymuKlubu.git`
+- `cd spravceTymuKlubu`
 - `npm i`
 
 Spusťte server pro vývojové prostředí a server pro simulaci databáze:

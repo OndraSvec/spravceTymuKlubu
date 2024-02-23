@@ -41,3 +41,12 @@ export function outputLineUpInfo(team: Member[], teamName: string): string {
     coachCount === 0 || coachCount > 4 ? 'ů' : coachCount === 1 ? 'a' : 'y'
   }`;
 }
+
+export function filterMembers(members: Member[], searchVal: string) {
+  const lowerCasedSearch = searchVal.toLowerCase();
+  return members.filter(
+    (member) =>
+      member.firstName.toLowerCase().includes(lowerCasedSearch) ||
+      member.lastName.toLowerCase().includes(lowerCasedSearch)
+  );
+}

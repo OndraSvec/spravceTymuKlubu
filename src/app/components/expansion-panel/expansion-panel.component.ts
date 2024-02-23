@@ -6,7 +6,7 @@ import { MatList, MatListItem } from '@angular/material/list';
 import { Member } from '../../members/member.type';
 import { Team } from '../../teams/team.type';
 import { LineUp } from '../../line-ups/line-up.type';
-import { MatTableModule } from '@angular/material/table';
+import { TableComponent } from '../table/table.component';
 
 @Component({
   selector: 'app-expansion-panel',
@@ -17,7 +17,7 @@ import { MatTableModule } from '@angular/material/table';
     MatExpansionModule,
     MatList,
     MatListItem,
-    MatTableModule,
+    TableComponent,
   ],
   templateUrl: './expansion-panel.component.html',
   styleUrl: './expansion-panel.component.css',

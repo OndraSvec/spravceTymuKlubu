@@ -30,12 +30,12 @@
       "firstName": "David",
       "lastName": "Sklenička",
       "dob": "2002-08-23",
-      "teamId": null,
+      "teamId": "bUAR6TmJkJNvwoLVMJSpk",
       "isInLineUp": true,
       "lineUpRole": [
         "Hráč"
       ],
-      "lineUpPosition": "Obránce"
+      "lineUpPosition": "Útočník"
     }
   ],
   "teams": [

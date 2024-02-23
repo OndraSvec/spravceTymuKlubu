@@ -1,5 +1,8 @@
 @if (!error) { @defer (when !loading) { @if (members.length > 0) {
-<table mat-table [dataSource]="members">
+<app-search-bar (searchValueChange)="onSearch($event)"></app-search-bar>
+@if (filteredMembers.length > 0) {
+
+<table mat-table [dataSource]="filteredMembers">
   @for(column of columnsToDisplay; track column; let idx = $index) {
   <ng-container [matColumnDef]="column">
     <th class="responsive-text" mat-header-cell *matHeaderCellDef>
@@ -37,6 +40,10 @@
   <tr mat-row *matRowDef="let myRowData; columns: columnsToDisplay"></tr>
 </table>
 } @else {
+<app-message-displayer
+  message="Vyhledávání neodpovídají žádní členové..."
+></app-message-displayer>
+} } @else {
 <app-message-displayer
   message="Zatím nemáte žádné členy..."
 ></app-message-displayer>

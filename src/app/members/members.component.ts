@@ -14,26 +14,32 @@ import { MatMiniFabButton } from '@angular/material/button';
 import { MatIcon } from '@angular/material/icon';
 import { DialogComponent } from '../components/dialog/dialog.component';
 import { AddDBEntryButtonComponent } from '../components/add-dbentry-button/add-dbentry-button.component';
-import { datePickerFormatter, sortMembers } from '../../utils/helpers';
+import {
+  datePickerFormatter,
+  filterMembers,
+  sortMembers,
+} from '../../utils/helpers';
 import { Team } from '../teams/team.type';
+import { SearchBarComponent } from '../components/search-bar/search-bar.component';
 
 @Component({
   selector: 'app-members',
   standalone: true,
   imports: [
-    MatList,
-    MatListItem,
-    MatDialogModule,
-    MatTableModule,
+    AddDBEntryButtonComponent,
     AgePipe,
     AsyncPipe,
     DateOfBirthPipe,
-    AddDBEntryButtonComponent,
-    LoadingSpinnerComponent,
-    MessageDisplayerComponent,
     DialogComponent,
-    MatMiniFabButton,
+    LoadingSpinnerComponent,
+    MatDialogModule,
     MatIcon,
+    MatList,
+    MatListItem,
+    MatMiniFabButton,
+    MatTableModule,
+    MessageDisplayerComponent,
+    SearchBarComponent,
   ],
   templateUrl: './members.component.html',
   styleUrl: './members.component.css',
@@ -43,6 +49,7 @@ export class MembersComponent implements OnInit {
   private teams: Team[] = [];
   private dialog: MatDialog = inject(MatDialog);
   public members: Member[] = [];
+  public filteredMembers: Member[] = [];
   public columnsToDisplay = ['name', 'dob', 'age', 'actions'];
   public titlesToDisplay = ['Jméno', 'Datum narození', 'Věk', 'Akce'];
   public loading = false;
@@ -56,11 +63,16 @@ export class MembersComponent implements OnInit {
     }).subscribe({
       next: ({ membersReq, teamsReq }) => {
         this.members = membersReq;
+        this.filteredMembers = membersReq;
         this.teams = teamsReq;
         this.loading = false;
       },
       error: () => (this.error = true),
     });
+  }
+
+  onSearch(searchVal: string) {
+    this.filteredMembers = filterMembers(this.members, searchVal);
   }
 
   onDelete(id: string) {
@@ -97,6 +109,7 @@ export class MembersComponent implements OnInit {
                 }
               : member
           );
+          this.filteredMembers = this.members;
         } else {
           this.members.push({
             ...res.data,
@@ -109,7 +122,10 @@ export class MembersComponent implements OnInit {
               : '',
           });
           // Use concat to trigger the OnChanges mechanism
-          this.members = ([] as Member[]).concat(sortMembers(this.members));
+          this.filteredMembers = this.members;
+          this.filteredMembers = ([] as Member[]).concat(
+            sortMembers(this.filteredMembers)
+          );
         }
       }
     });

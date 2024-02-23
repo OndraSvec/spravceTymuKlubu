@@ -1,22 +1,55 @@
 {
   "members": [
     {
-      "id": "vn7iLId-KbUquow90XXwX",
-      "firstName": "David",
-      "lastName": "Peterka",
-      "dob": "1996-02-06",
+      "id": "NpAMUbPgjcqEP-ybTrQrq",
+      "firstName": "Jakub",
+      "lastName": "Marvan",
+      "dob": "1970-07-22",
+      "teamId": "bUAR6TmJkJNvwoLVMJSpk",
+      "isInLineUp": true,
+      "lineUpRole": [
+        "Trenér"
+      ],
+      "lineUpPosition": ""
+    },
+    {
+      "id": "H6td2uEo8Ruqzk99TXMmN",
+      "firstName": "Andrej",
+      "lastName": "Marvan",
+      "dob": "1998-06-08",
       "teamId": "bUAR6TmJkJNvwoLVMJSpk",
       "isInLineUp": true,
       "lineUpRole": [
         "Hráč"
       ],
       "lineUpPosition": "Obránce"
+    },
+    {
+      "id": "9K5W6Pk69X-S2GInjFPBJ",
+      "firstName": "Petr",
+      "lastName": "Stolbenko",
+      "dob": "1990-12-28",
+      "teamId": "3NOa9xgPqugt4N7nl7OGW",
+      "isInLineUp": true,
+      "lineUpRole": [
+        "Hráč",
+        "Trenér"
+      ],
+      "lineUpPosition": "Brankář"
     }
   ],
   "teams": [
     {
       "id": "bUAR6TmJkJNvwoLVMJSpk",
       "name": "Tým A"
+    },
+    {
+      "id": "faMA-Esdg2jNBydxD5zls",
+      "name": "Tým B"
+    },
+    {
+      "id": "3NOa9xgPqugt4N7nl7OGW",
+      "name": "Tým C"
     }
   ]
 }

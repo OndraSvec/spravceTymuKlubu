@@ -27,6 +27,4 @@ Spusťte server pro vývojové prostředí a server pro simulaci databáze:
 - `ng serve`
 - `npm run json:server`
 
-Aplikaci najdete na:
-
-- `http://localhost:4200/`
+Aplikaci najdete na adrese [http://localhost:4200/](http://localhost:4200/)

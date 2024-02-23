@@ -23,9 +23,9 @@ Naklonujte repozitář a nainstalujte závislosti:
 - `cd spravceTymuKlubu`
 - `npm i`
 
-Spusťte server pro vývojové prostředí a server pro simulaci databáze:
+Spusťte server pro simulaci databáze a server pro vývojové prostředí:
 
-- `ng serve`
 - `npm run json:server`
+- `ng serve`
 
 Aplikaci najdete na adrese [http://localhost:4200/](http://localhost:4200/)

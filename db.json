@@ -1,10 +1,10 @@
 {
   "members": [
     {
-      "id": "NpAMUbPgjcqEP-ybTrQrq",
-      "firstName": "Jakub",
-      "lastName": "Marvan",
-      "dob": "1970-07-22",
+      "id": "7rDN7p3gF78EzD7LDZi3U",
+      "firstName": "Michal",
+      "lastName": "Roubíček",
+      "dob": "1982-07-09",
       "teamId": "bUAR6TmJkJNvwoLVMJSpk",
       "isInLineUp": true,
       "lineUpRole": [
@@ -13,41 +13,16 @@
       "lineUpPosition": ""
     },
     {
-      "id": "H6td2uEo8Ruqzk99TXMmN",
-      "firstName": "Andrej",
-      "lastName": "Marvan",
-      "dob": "1998-06-08",
-      "teamId": "bUAR6TmJkJNvwoLVMJSpk",
+      "id": "PCr51iztg9K6Q48vpr70P",
+      "firstName": "Jan",
+      "lastName": "Pastelka",
+      "dob": "1998-05-13",
+      "teamId": "faMA-Esdg2jNBydxD5zls",
       "isInLineUp": true,
       "lineUpRole": [
         "Hráč"
       ],
       "lineUpPosition": "Obránce"
-    },
-    {
-      "id": "9K5W6Pk69X-S2GInjFPBJ",
-      "firstName": "Petr",
-      "lastName": "Stolbenko",
-      "dob": "1990-12-28",
-      "teamId": "3NOa9xgPqugt4N7nl7OGW",
-      "isInLineUp": true,
-      "lineUpRole": [
-        "Hráč",
-        "Trenér"
-      ],
-      "lineUpPosition": "Brankář"
-    },
-    {
-      "id": "ePsCAn-93zCzna-V1IP4C",
-      "firstName": "Adam",
-      "lastName": "Stolbenko",
-      "dob": "1993-03-03",
-      "teamId": "3NOa9xgPqugt4N7nl7OGW",
-      "isInLineUp": true,
-      "lineUpRole": [
-        "Hráč"
-      ],
-      "lineUpPosition": "Záložník"
     }
   ],
   "teams": [

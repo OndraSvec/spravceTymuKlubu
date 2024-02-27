@@ -78,6 +78,7 @@ export class MembersComponent implements OnInit {
   onDelete(id: string) {
     this.clubService.deleteMember(id);
     this.members = this.members.filter((member) => member.id !== id);
+    this.filteredMembers = this.members;
   }
 
   // Use an arrow function so as not to lose 'this'
